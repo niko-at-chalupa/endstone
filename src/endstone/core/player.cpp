@@ -717,16 +717,19 @@ void EndstonePlayer::removeDebugShape(std::uint64_t id)
 
 void EndstonePlayer::removeDebugShapes()
 {
+    if (debug_shapes_.empty()) {
+        return;
+    }
+
+    auto packet = MinecraftPackets::createPacket(MinecraftPacketIds::ServerScriptDebugDrawerPacket);
+    auto &pk = static_cast<DebugDrawerPacket &>(*packet);
     for (auto id : debug_shapes_) {
         ShapeDataPayload shape_data;
         shape_data.network_id = id;
         shape_data.time_left_total_sec = 0;
-
-        auto packet = MinecraftPackets::createPacket(MinecraftPacketIds::ServerScriptDebugDrawerPacket);
-        auto &pk = static_cast<DebugDrawerPacket &>(*packet);
-        pk.payload.shapes.push_back(std::move(shape_data));
-        getHandle().sendNetworkPacket(*packet);
+        pk.payload.shapes.emplace_back(std::move(shape_data));
     }
+    getHandle().sendNetworkPacket(*packet);
     debug_shapes_.clear();
 }
 

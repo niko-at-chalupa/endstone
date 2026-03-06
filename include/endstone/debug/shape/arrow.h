@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <algorithm>
+
 #include "endstone/debug/shape/shape.h"
 
 namespace endstone {
@@ -77,7 +79,7 @@ public:
      */
     DebugArrow &setHeadSegments(int segments)
     {
-        head_segments_ = segments;
+        head_segments_ = std::clamp(segments, 3, 128);
         return *this;
     }
 
