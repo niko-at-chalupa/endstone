@@ -20,6 +20,7 @@
 #include "bedrock/entity/components/user_entity_identifier_component.h"
 #include "bedrock/network/packet.h"
 #include "bedrock/network/packet/clientbound_map_item_data_packet.h"
+#include "bedrock/network/packet/debug_drawer_packet.h"
 #include "bedrock/network/packet/emote_packet.h"
 #include "bedrock/network/packet/mob_equipment_packet.h"
 #include "bedrock/network/packet/modal_form_request_packet.h"
@@ -631,8 +632,9 @@ void EndstonePlayer::sendMap(MapView &map)
 
 std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant shape)
 {
+    auto id = debug_shape_ids_--;
     // TODO(endstone): implement
-    return 0;
+    return id;
 }
 
 void EndstonePlayer::removeDebugShape(std::uint64_t id)
