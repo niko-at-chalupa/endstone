@@ -645,7 +645,7 @@ std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant
     data.dimension_id = dimension.getHandle().getDimensionId();
 
     std::visit(
-        [&data](auto &&s) {
+        [&data, &location](auto &&s) {
             using T = std::decay_t<decltype(s)>;
             auto c = s.getColor();
             data.color =
@@ -666,14 +666,20 @@ std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant
             }
             else if constexpr (std::is_same_v<T, DebugLine>) {
                 data.shape_type = ShapeType::Line;
-                // Compute end location from location + direction * length
-                // For line, we store the end location relative offset
-                data.extra_data_payload = LineDataPayload{Vec3{0, 0, s.getLength()}};
+                auto dir = location.getDirection();
+                auto end = Vec3{location.getX() + dir.getX() * s.getLength(),
+                                location.getY() + dir.getY() * s.getLength(),
+                                location.getZ() + dir.getZ() * s.getLength()};
+                data.extra_data_payload = LineDataPayload{end};
             }
             else if constexpr (std::is_same_v<T, DebugArrow>) {
                 data.shape_type = ShapeType::Arrow;
+                auto dir = location.getDirection();
+                auto end = Vec3{location.getX() + dir.getX() * s.getLength(),
+                                location.getY() + dir.getY() * s.getLength(),
+                                location.getZ() + dir.getZ() * s.getLength()};
                 ArrowDataPayload arrow;
-                arrow.end_location = Vec3{0, 0, s.getLength()};
+                arrow.end_location = end;
                 arrow.arrow_head_length = s.getHeadLength();
                 arrow.arrow_head_radius = s.getHeadRadius();
                 arrow.num_segments = static_cast<unsigned char>(s.getHeadSegments());
