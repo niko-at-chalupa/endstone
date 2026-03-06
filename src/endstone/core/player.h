@@ -16,6 +16,7 @@
 
 #include <limits>
 #include <memory>
+#include <unordered_set>
 
 #include <nlohmann/json.hpp>
 
@@ -148,6 +149,7 @@ private:
     std::uint32_t form_ids_ = 0xffff;  // Set to a large value to avoid collision with forms created by script api
     std::unordered_map<std::uint32_t, FormVariant> forms_;
     std::uint64_t debug_shape_ids_ = std::numeric_limits<std::uint64_t>::max();  // Decrement to avoid collision with script api
+    std::unordered_set<std::uint64_t> debug_shapes_;
     bool spawned_ = false;
     bool last_op_status_ = false;
 };

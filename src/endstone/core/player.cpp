@@ -44,6 +44,7 @@
 #include "endstone/core/game_mode.h"
 #include "endstone/core/inventory/item_stack.h"
 #include "endstone/core/inventory/player_inventory.h"
+#include "endstone/core/level/dimension.h"
 #include "endstone/core/map/map_view.h"
 #include "endstone/core/message.h"
 #include "endstone/core/network/data_packet.h"
@@ -632,19 +633,95 @@ void EndstonePlayer::sendMap(MapView &map)
 
 std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant shape)
 {
+    using ShapeType = ScriptModuleDebugUtilities::ScriptDebugShapeType;
+
     auto id = debug_shape_ids_--;
-    // TODO(endstone): implement
+    auto &dimension = static_cast<EndstoneDimension &>(location.getDimension());
+
+    ShapeDataPayload data;
+    data.network_id = id;
+    data.location = Vec3{location.getX(), location.getY(), location.getZ()};
+    data.rotation = Vec3{location.getPitch(), location.getYaw(), 0};
+    data.dimension_id = dimension.getHandle().getDimensionId();
+
+    std::visit(
+        [&data](auto &&s) {
+            using T = std::decay_t<decltype(s)>;
+            auto c = s.getColor();
+            data.color =
+                mce::Color(static_cast<float>(c.getRed()) / 255.0F, static_cast<float>(c.getGreen()) / 255.0F,
+                           static_cast<float>(c.getBlue()) / 255.0F, static_cast<float>(c.getAlpha()) / 255.0F);
+            data.scale = s.getScale();
+
+            if constexpr (std::is_same_v<T, DebugBox>) {
+                data.shape_type = ShapeType::Box;
+                auto b = s.getBound();
+                data.extra_data_payload = BoxDataPayload{Vec3{b.getX(), b.getY(), b.getZ()}};
+            }
+            else if constexpr (std::is_same_v<T, DebugSphere>) {
+                data.shape_type = ShapeType::Sphere;
+            }
+            else if constexpr (std::is_same_v<T, DebugCircle>) {
+                data.shape_type = ShapeType::Circle;
+            }
+            else if constexpr (std::is_same_v<T, DebugLine>) {
+                data.shape_type = ShapeType::Line;
+                // Compute end location from location + direction * length
+                // For line, we store the end location relative offset
+                data.extra_data_payload = LineDataPayload{Vec3{0, 0, s.getLength()}};
+            }
+            else if constexpr (std::is_same_v<T, DebugArrow>) {
+                data.shape_type = ShapeType::Arrow;
+                ArrowDataPayload arrow;
+                arrow.end_location = Vec3{0, 0, s.getLength()};
+                arrow.arrow_head_length = s.getHeadLength();
+                arrow.arrow_head_radius = s.getHeadRadius();
+                arrow.num_segments = static_cast<unsigned char>(s.getHeadSegments());
+                data.extra_data_payload = arrow;
+            }
+            else if constexpr (std::is_same_v<T, DebugText>) {
+                data.shape_type = ShapeType::Text;
+                data.extra_data_payload = TextDataPayload{s.getText()};
+            }
+        },
+        shape);
+
+    auto packet = MinecraftPackets::createPacket(MinecraftPacketIds::ServerScriptDebugDrawerPacket);
+    auto &pk = static_cast<DebugDrawerPacket &>(*packet);
+    pk.payload.shapes.emplace_back(std::move(data));
+    getHandle().sendNetworkPacket(*packet);
+    debug_shapes_.insert(id);
     return id;
 }
 
 void EndstonePlayer::removeDebugShape(std::uint64_t id)
 {
-    // TODO(endstone): implement
+    if (debug_shapes_.erase(id) == 0) {
+        return;
+    }
+
+    ShapeDataPayload shape_data;
+    shape_data.network_id = id;
+    shape_data.time_left_total_sec = 0;
+    auto packet = MinecraftPackets::createPacket(MinecraftPacketIds::ServerScriptDebugDrawerPacket);
+    auto &pk = static_cast<DebugDrawerPacket &>(*packet);
+    pk.payload.shapes.emplace_back(std::move(shape_data));
+    getHandle().sendNetworkPacket(*packet);
 }
 
 void EndstonePlayer::removeDebugShapes()
 {
-    // TODO(endstone): implement
+    for (auto id : debug_shapes_) {
+        ShapeDataPayload shape_data;
+        shape_data.network_id = id;
+        shape_data.time_left_total_sec = 0;
+
+        auto packet = MinecraftPackets::createPacket(MinecraftPacketIds::ServerScriptDebugDrawerPacket);
+        auto &pk = static_cast<DebugDrawerPacket &>(*packet);
+        pk.payload.shapes.push_back(std::move(shape_data));
+        getHandle().sendNetworkPacket(*packet);
+    }
+    debug_shapes_.clear();
 }
 
 bool EndstonePlayer::handlePacket(Packet &packet)

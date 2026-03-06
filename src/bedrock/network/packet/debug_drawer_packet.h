@@ -28,7 +28,7 @@
 #include "bedrock/world/level/dimension/dimension_type.h"
 
 namespace ScriptModuleDebugUtilities {
-enum class ScriptDebugShapeType : uint8_t {
+enum class ScriptDebugShapeType : std::uint8_t {
     Line = 0,
     Box = 1,
     Sphere = 2,
@@ -48,7 +48,7 @@ struct ArrowDataPayload {
     std::optional<Vec3> end_location;
     std::optional<float> arrow_head_length;
     std::optional<float> arrow_head_radius;
-    std::optional<unsigned char> num_segments;
+    std::optional<std::uint8_t> num_segments;
 };
 
 struct TextDataPayload {
@@ -75,7 +75,7 @@ struct ShapeDataPayload {
     std::optional<float> scale;
     std::optional<mce::Color> color;
     std::optional<float> time_left_total_sec;
-    std::optional<AutomaticID<Dimension, int>> dimension_id;
+    std::optional<DimensionType> dimension_id;
     std::optional<ActorRuntimeID> attached_to_id;
     std::variant<cereal::NullType, ArrowDataPayload, TextDataPayload, BoxDataPayload, LineDataPayload,
                  SphereDataPayload>
