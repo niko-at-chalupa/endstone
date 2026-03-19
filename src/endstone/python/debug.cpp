@@ -24,29 +24,39 @@ void init_debug(py::module_ &m)
         .def(py::init<>())
         .def_property("color", &DebugBox::getColor, &DebugBox::setColor, "The color of this shape.")
         .def_property("scale", &DebugBox::getScale, &DebugBox::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugBox::getRotation, &DebugBox::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).")
         .def_property("bound", &DebugBox::getBound, &DebugBox::setBound,
                       "The bounding size of the box. Final size = bound * scale.");
 
     py::class_<DebugSphere>(m, "DebugSphere", "Represents a debug sphere shape. Radius is controlled via scale.")
         .def(py::init<>())
         .def_property("color", &DebugSphere::getColor, &DebugSphere::setColor, "The color of this shape.")
-        .def_property("scale", &DebugSphere::getScale, &DebugSphere::setScale, "The uniform scale factor.");
+        .def_property("scale", &DebugSphere::getScale, &DebugSphere::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugSphere::getRotation, &DebugSphere::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).");
 
     py::class_<DebugCircle>(m, "DebugCircle", "Represents a debug 2D circle shape. Radius is controlled via scale.")
         .def(py::init<>())
         .def_property("color", &DebugCircle::getColor, &DebugCircle::setColor, "The color of this shape.")
-        .def_property("scale", &DebugCircle::getScale, &DebugCircle::setScale, "The uniform scale factor.");
+        .def_property("scale", &DebugCircle::getScale, &DebugCircle::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugCircle::getRotation, &DebugCircle::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).");
 
     py::class_<DebugLine>(m, "DebugLine", "Represents a debug line segment shape.")
         .def(py::init<>())
         .def_property("color", &DebugLine::getColor, &DebugLine::setColor, "The color of this shape.")
         .def_property("scale", &DebugLine::getScale, &DebugLine::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugLine::getRotation, &DebugLine::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).")
         .def_property("length", &DebugLine::getLength, &DebugLine::setLength, "The length of the line segment.");
 
     py::class_<DebugArrow>(m, "DebugArrow", "Represents a debug arrow shape.")
         .def(py::init<>())
         .def_property("color", &DebugArrow::getColor, &DebugArrow::setColor, "The color of this shape.")
         .def_property("scale", &DebugArrow::getScale, &DebugArrow::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugArrow::getRotation, &DebugArrow::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).")
         .def_property("length", &DebugArrow::getLength, &DebugArrow::setLength, "The length of the arrow.")
         .def_property("head_length", &DebugArrow::getHeadLength, &DebugArrow::setHeadLength,
                       "The length of the arrow's head.")
@@ -59,6 +69,8 @@ void init_debug(py::module_ &m)
         .def(py::init<>())
         .def_property("color", &DebugText::getColor, &DebugText::setColor, "The color of this shape.")
         .def_property("scale", &DebugText::getScale, &DebugText::setScale, "The uniform scale factor.")
+        .def_property("rotation", &DebugText::getRotation, &DebugText::setRotation,
+                      "The rotation of this shape as Euler angles (pitch, yaw, roll).")
         .def_property("text", &DebugText::getText, &DebugText::setText, "The text displayed by this label.");
 }
 

@@ -641,7 +641,6 @@ std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant
     ShapeDataPayload data;
     data.network_id = id;
     data.location = Vec3{location.getX(), location.getY(), location.getZ()};
-    data.rotation = Vec3{location.getPitch(), location.getYaw(), 0};
     data.dimension_id = dimension.getHandle().getDimensionId();
 
     std::visit(
@@ -652,6 +651,8 @@ std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant
                 mce::Color(static_cast<float>(c.getRed()) / 255.0F, static_cast<float>(c.getGreen()) / 255.0F,
                            static_cast<float>(c.getBlue()) / 255.0F, static_cast<float>(c.getAlpha()) / 255.0F);
             data.scale = s.getScale();
+            auto r = s.getRotation();
+            data.rotation = Vec3{r.getX(), r.getY(), r.getZ()};
 
             if constexpr (std::is_same_v<T, DebugBox>) {
                 data.shape_type = ShapeType::Box;
@@ -666,18 +667,29 @@ std::uint64_t EndstonePlayer::addDebugShape(Location location, DebugShapeVariant
             }
             else if constexpr (std::is_same_v<T, DebugLine>) {
                 data.shape_type = ShapeType::Line;
-                auto dir = location.getDirection();
-                auto end = Vec3{location.getX() + dir.getX() * s.getLength(),
-                                location.getY() + dir.getY() * s.getLength(),
-                                location.getZ() + dir.getZ() * s.getLength()};
+                // Compute direction from rotation (pitch=x, yaw=y), same as Location::getDirection
+                auto rot_x = r.getY() * std::numbers::pi_v<float> / 180.0F;
+                auto rot_y = r.getX() * std::numbers::pi_v<float> / 180.0F;
+                auto xz = std::cos(rot_y);
+                auto dx = -xz * std::sin(rot_x);
+                auto dy = -std::sin(rot_y);
+                auto dz = xz * std::cos(rot_x);
+                auto end = Vec3{location.getX() + dx * s.getLength(),
+                                location.getY() + dy * s.getLength(),
+                                location.getZ() + dz * s.getLength()};
                 data.extra_data_payload = LineDataPayload{end};
             }
             else if constexpr (std::is_same_v<T, DebugArrow>) {
                 data.shape_type = ShapeType::Arrow;
-                auto dir = location.getDirection();
-                auto end = Vec3{location.getX() + dir.getX() * s.getLength(),
-                                location.getY() + dir.getY() * s.getLength(),
-                                location.getZ() + dir.getZ() * s.getLength()};
+                auto rot_x = r.getY() * std::numbers::pi_v<float> / 180.0F;
+                auto rot_y = r.getX() * std::numbers::pi_v<float> / 180.0F;
+                auto xz = std::cos(rot_y);
+                auto dx = -xz * std::sin(rot_x);
+                auto dy = -std::sin(rot_y);
+                auto dz = xz * std::cos(rot_x);
+                auto end = Vec3{location.getX() + dx * s.getLength(),
+                                location.getY() + dy * s.getLength(),
+                                location.getZ() + dz * s.getLength()};
                 ArrowDataPayload arrow;
                 arrow.end_location = end;
                 arrow.arrow_head_length = s.getHeadLength();

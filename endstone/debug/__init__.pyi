@@ -28,6 +28,14 @@ class DebugBox:
     @scale.setter
     def scale(self, arg1: float) -> DebugBox: ...
     @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugBox: ...
+    @property
     def bound(self) -> Vector:
         """
         The bounding size of the box. Final size = bound * scale.
@@ -57,6 +65,14 @@ class DebugSphere:
         ...
     @scale.setter
     def scale(self, arg1: float) -> DebugSphere: ...
+    @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugSphere: ...
 
 class DebugCircle:
     """
@@ -79,6 +95,14 @@ class DebugCircle:
         ...
     @scale.setter
     def scale(self, arg1: float) -> DebugCircle: ...
+    @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugCircle: ...
 
 class DebugLine:
     """
@@ -101,6 +125,14 @@ class DebugLine:
         ...
     @scale.setter
     def scale(self, arg1: float) -> DebugLine: ...
+    @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugLine: ...
     @property
     def length(self) -> float:
         """
@@ -131,6 +163,14 @@ class DebugArrow:
         ...
     @scale.setter
     def scale(self, arg1: float) -> DebugArrow: ...
+    @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugArrow: ...
     @property
     def length(self) -> float:
         """
@@ -185,6 +225,14 @@ class DebugText:
         ...
     @scale.setter
     def scale(self, arg1: float) -> DebugText: ...
+    @property
+    def rotation(self) -> Vector:
+        """
+        The rotation of this shape as Euler angles (pitch, yaw, roll).
+        """
+        ...
+    @rotation.setter
+    def rotation(self, arg1: Vector) -> DebugText: ...
     @property
     def text(self) -> str:
         """

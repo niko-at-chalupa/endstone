@@ -15,6 +15,7 @@
 #pragma once
 
 #include "endstone/util/color.h"
+#include "endstone/util/vector.h"
 
 namespace endstone {
 
@@ -52,9 +53,24 @@ public:
         return *static_cast<T *>(this);
     }
 
+    /**
+     * @brief Gets the rotation of this shape as Euler angles (pitch, yaw, roll).
+     */
+    [[nodiscard]] Vector getRotation() const { return rotation_; }
+
+    /**
+     * @brief Sets the rotation of this shape as Euler angles (pitch, yaw, roll).
+     */
+    T &setRotation(Vector rotation)
+    {
+        rotation_ = rotation;
+        return *static_cast<T *>(this);
+    }
+
 protected:
     Color color_{255, 255, 255};
     float scale_{1.0F};
+    Vector rotation_{};
 
 };
 
