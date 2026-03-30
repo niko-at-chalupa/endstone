@@ -109,7 +109,7 @@ private:
     PrivateKeyManager &server_keys_;
     ServerLocator &server_locator_;
     gsl::not_null<PacketSender *> packet_sender_;  // +200
-    bool use_allow_list_;
+    // bool use_allow_list_;
     AllowList &allow_list_;
     PermissionsFile *permissions_file_;
     DenyList server_deny_list_;
