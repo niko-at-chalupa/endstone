@@ -1,4 +1,4 @@
-timestamp = 1774882491
+timestamp = 1774887345
 version = "1.26.11"
 
 [windows]
@@ -43,6 +43,8 @@ version = "1.26.11"
 "?explode@Explosion@@QEAA_NAEAVIRandom@@@Z" = 65074480
 # FurnaceBlockActor
 "?getBurnDuration@FurnaceBlockActor@@SAMAEBVItemStackBase@@M@Z" = 68303104
+# InventoryTransaction
+"?executeWorldInteraction@InventoryTransaction@@SA?AW4InventoryTransactionError@@PEAXAEAVPlayer@@AEBVInventoryAction@@@Z" = 63160976
 # Item
 "?readUserData@Item@@UEBAXAEAVItemStackBase@@AEAVIDataInput@@AEAVReadOnlyBinaryStream@@@Z" = 62519088
 # ItemInstance
@@ -151,6 +153,8 @@ version = "1.26.11"
 "_ZN9Explosion7explodeER7IRandom" = 178313296
 # FurnaceBlockActor
 "_ZN17FurnaceBlockActor15getBurnDurationERK13ItemStackBasef" = 183691568
+# InventoryTransaction
+"_ZN20InventoryTransaction23executeWorldInteractionEPvR6PlayerRK15InventoryAction" = 174493584
 # Item
 "_ZNK4Item12readUserDataER13ItemStackBaseR10IDataInputR20ReadOnlyBinaryStream" = 173992752
 # ItemInstance
