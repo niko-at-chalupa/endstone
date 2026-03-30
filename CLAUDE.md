@@ -103,3 +103,7 @@ C++ plugins link against `endstone::endstone` (header-only) and use the `endston
 ### Dependencies
 
 Core dependencies managed via Conan: fmt, boost, pybind11, spdlog, nlohmann_json, entt, magic_enum, sentry-native. See `conanfile.py` for full list.
+
+## Git Conventions
+
+- Never add a `Co-Authored-By` line for Claude when creating commits.
