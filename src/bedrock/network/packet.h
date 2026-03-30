@@ -281,8 +281,13 @@ class PacketHeader {
 public:
     static constexpr std::uint32_t NUM_CHANNEL_BITS = 1;
     static constexpr std::uint32_t NUM_CHANNELS = 2;
-    PacketHeader(SubClientId, MinecraftPacketIds, SubClientId);
-    static PacketHeader fromRaw(std::uint32_t);
+    PacketHeader(SubClientId recipient_sub_id, MinecraftPacketIds packet_id, SubClientId sender_sub_id);
+    static PacketHeader fromRaw(const std::uint32_t data)
+    {
+        PacketHeader header;
+        header.header_data_ = data;
+        return header;
+    }
     [[nodiscard]] MinecraftPacketIds getPacketId() const;
     [[nodiscard]] SubClientId getRecipientSubId() const;
     [[nodiscard]] SubClientId getSenderSubId() const;

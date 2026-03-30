@@ -20,8 +20,18 @@
 #include "bedrock/network/remote_connector.h"
 
 class RakNetConnector : public RemoteConnector {
-
 public:
+    class RakNetNetworkPeer : public NetworkPeer {
+    public:
+        RakNetNetworkPeer(RakNet::RakPeerInterface &rak_peer, const NetworkIdentifier &id);
+        [[nodiscard]] const NetworkIdentifier &getId() const { return id_; }
+
+    private:
+        static PacketReliability getReliability(Reliability reliability);
+        RakNet::RakPeerInterface &rak_peer_;
+        NetworkIdentifier id_;
+    };
+
     struct ConnectionCallbacks : Connector::ConnectionCallbacks {
         virtual void onAllConnectionsClosed(Connection::DisconnectFailReason, bool) = 0;
         virtual void onAllRemoteConnectionsClosed(Connection::DisconnectFailReason, bool) = 0;

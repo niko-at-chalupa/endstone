@@ -32,8 +32,8 @@ class NetworkSystem : public RakNetConnector::ConnectionCallbacks,
 public:
     Bedrock::NotNullNonOwnerPtr<RemoteConnector> getRemoteConnector();
     [[nodiscard]] Bedrock::NotNullNonOwnerPtr<const RemoteConnector> getRemoteConnector() const;
-    ENDSTONE_HOOK void send(const NetworkIdentifier &network_id, const Packet &packet, SubClientId sender_sub_id);
-    ENDSTONE_HOOK void sendToMultiple(const std::vector<NetworkIdentifierWithSubId> &recipients, const Packet &packet);
+    void send(const NetworkIdentifier &network_id, const Packet &packet, SubClientId sender_sub_id);
+    void sendToMultiple(const std::vector<NetworkIdentifierWithSubId> &recipients, const Packet &packet);
     void setCloseConnection(const NetworkIdentifier &id);
     void closeConnection(const NetworkIdentifier &id, const Connection::DisconnectFailReason reason,
                          const std::string &message_from_server);

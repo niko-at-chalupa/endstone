@@ -12,19 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "bedrock/network/network_system.h"
+#include "bedrock/network/batched_network_peer.h"
 
 #include "bedrock/network/packet.h"
 #include "bedrock/network/packet/clientbound_map_item_data_packet.h"
 #include "bedrock/network/packet/resource_pack_stack_packet.h"
 #include "bedrock/network/packet/resource_packs_info_packet.h"
 #include "bedrock/network/packet/start_game_packet.h"
+#include "bedrock/network/raknet_connector.h"
 #include "endstone/core/level/level.h"
 #include "endstone/core/map/map_view.h"
-#include "endstone/core/server.h"
 #include "endstone/core/player.h"
+#include "endstone/core/server.h"
 #include "endstone/core/util/socket_address.h"
+#include "endstone/event/server/packet_receive_event.h"
 #include "endstone/event/server/packet_send_event.h"
+#include "endstone/runtime/hook.h"
 
 namespace {
 void patchPacket(const StartGamePacket &packet)
@@ -106,61 +109,52 @@ void patchPacket(const ClientboundMapItemDataPacket &packet, endstone::core::End
 }
 }  // namespace
 
-void NetworkSystem::send(const NetworkIdentifier &network_id, const Packet &packet, SubClientId sender_sub_id)
+void BatchedNetworkPeer::sendPacket(const std::string &data, Reliability reliability, Compressibility compressible)
 {
+    ReadOnlyBinaryStream stream(data, false);
+    auto result = stream.getUnsignedVarInt().discardError();
+    if (!result) {
+        const auto &server = entt::locator<endstone::core::EndstoneServer>::value();
+        server.getLogger().critical("BatchedNetworkPeer::sendPacket: Failed to parse raw packet header!");
+        return;
+    }
+
+    auto header = PacketHeader::fromRaw(result.value());
+    const auto &id = getId();
+
     const auto &server = entt::locator<endstone::core::EndstoneServer>::value();
     const auto *server_player =
-        server.getServer().getMinecraft()->getServerNetworkHandler()->getServerPlayer(network_id, sender_sub_id);
+        server.getServer().getMinecraft()->getServerNetworkHandler()->getServerPlayer(id, header.getSenderSubId());
     endstone::Player *player = nullptr;
     if (server_player) {
         player = &server_player->getEndstoneActor<endstone::core::EndstonePlayer>();
     }
 
-    switch (packet.getId()) {
-    case MinecraftPacketIds::StartGame:
-        patchPacket(static_cast<const StartGamePacket &>(packet));
-        break;
-    case MinecraftPacketIds::ResourcePacksInfo:
-        patchPacket(static_cast<const ResourcePacksInfoPacket &>(packet));
-        break;
-    case MinecraftPacketIds::ResourcePackStack:
-        patchPacket(static_cast<const ResourcePackStackPacket &>(packet));
-        break;
-    case MinecraftPacketIds::MapData:
-        if (player) {
-            patchPacket(static_cast<const ClientboundMapItemDataPacket &>(packet),
-                        static_cast<endstone::core::EndstonePlayer &>(*player));
-        }
-        break;
-    default:
-        break;
-    }
+    // TODO(fixme): add patchPacket calls back
+    // switch (packet.getId()) {
+    // case MinecraftPacketIds::StartGame:
+    //     patchPacket(static_cast<const StartGamePacket &>(packet));
+    //     break;
+    // case MinecraftPacketIds::ResourcePacksInfo:
+    //     patchPacket(static_cast<const ResourcePacksInfoPacket &>(packet));
+    //     break;
+    // case MinecraftPacketIds::ResourcePackStack:
+    //     patchPacket(static_cast<const ResourcePackStackPacket &>(packet));
+    //     break;
+    // case MinecraftPacketIds::MapData:
+    //     if (player) {
+    //         patchPacket(static_cast<const ClientboundMapItemDataPacket &>(packet),
+    //                     static_cast<endstone::core::EndstonePlayer &>(*player));
+    //     }
+    //     break;
+    // default:
+    //     break;
+    // }
 
-    std::vector<NetworkIdentifierWithSubId> recipients;
-    recipients.emplace_back(network_id, sender_sub_id);
-    for (const auto &queue : incoming_packets) {
-        if (!queue) {
-            continue;
-        }
-        if (queue->callback_obj.allowOutgoingPacket(recipients, packet) != OutgoingPacketFilterResult::Allowed) {
-            return;
-        }
-    }
-
-    BinaryStream stream;
-    const auto packet_id = static_cast<int>(packet.getId());
-    const auto header = packet_id | (static_cast<unsigned>(sender_sub_id) << 10) |
-                        (static_cast<unsigned>(packet.getSenderSubId()) << 12);
-    stream.writeUnsignedVarInt(header, "Header Data", nullptr);
-    packet.writeWithSerializationMode(stream, getPacketReflectionCtx(),
-                                      packet_overrides_->getOverrideModeForPacket(packet.getId()));
-
-    ReadOnlyBinaryStream read_stream(stream.getView(), false);
-    read_stream.getUnsignedVarInt();
-    auto payload = read_stream.getView().substr(read_stream.getReadPointer());
-    endstone::PacketSendEvent e{player, packet_id, payload,
-                                endstone::core::EndstoneSocketAddress::fromNetworkIdentifier(network_id),
-                                static_cast<int>(sender_sub_id)};
+    auto payload = stream.getView().substr(stream.getReadPointer());
+    endstone::PacketSendEvent e{player, static_cast<int>(header.getPacketId()), payload,
+                                endstone::core::EndstoneSocketAddress::fromNetworkIdentifier(id),
+                                static_cast<int>(header.getSenderSubId())};
     server.getPluginManager().callEvent(e);
     if (e.isCancelled()) {
         return;
@@ -168,20 +162,66 @@ void NetworkSystem::send(const NetworkIdentifier &network_id, const Packet &pack
 
     if (e.getPayload().data() != payload.data()) {
         // Plugins have changed the payload, let's re-encode the packet
-        stream.reset();
-        stream.writeUnsignedVarInt(header, "Header Data", nullptr);
-        stream.writeRawBytes(e.getPayload());
+        BinaryStream out;
+        header.write(out);
+        out.writeRawBytes(e.getPayload());
+        ENDSTONE_HOOK_CALL_ORIGINAL(&BatchedNetworkPeer::sendPacket, this, out.getBuffer(), reliability, compressible);
     }
-
-    if (auto *connection = _getConnectionFromId(network_id)) {
-        connection->last_packet_time = std::chrono::steady_clock::now();
+    else {
+        ENDSTONE_HOOK_CALL_ORIGINAL(&BatchedNetworkPeer::sendPacket, this, data, reliability, compressible);
     }
-    _sendInternal(network_id, packet, stream.getBuffer());
 }
 
-void NetworkSystem::sendToMultiple(const std::vector<NetworkIdentifierWithSubId> &recipients, const Packet &packet)
+NetworkPeer::DataStatus BatchedNetworkPeer::_receivePacket(std::string &out_data,
+                                                           const PacketRecvTimepointPtr &timepoint_ptr)
 {
-    for (const auto &recipient : recipients) {
-        send(recipient.id, packet, recipient.sub_client_id);
+    const auto &server = endstone::core::EndstoneServer::getInstance();
+    auto network_handler = server.getServer().getMinecraft()->getServerNetworkHandler();
+    while (true) {
+        const auto status =
+            ENDSTONE_HOOK_CALL_ORIGINAL(&BatchedNetworkPeer::_receivePacket, this, out_data, timepoint_ptr);
+        if (status != DataStatus::HasData) {
+            return status;
+        }
+
+        ReadOnlyBinaryStream stream(out_data, false);
+        auto result = stream.getUnsignedVarInt().discardError();
+        if (!result) {
+            return DataStatus::BrokenData;
+        }
+
+        const auto header = PacketHeader::fromRaw(result.value());
+        const auto &id = getId();
+        endstone::core::EndstonePlayer *player = nullptr;
+        if (const auto *p = network_handler->getServerPlayer(id, header.getRecipientSubId())) {
+            player = &p->getEndstoneActor<endstone::core::EndstonePlayer>();
+        }
+
+        const auto payload = stream.getView().substr(stream.getReadPointer());
+        endstone::PacketReceiveEvent e{player, static_cast<int>(header.getPacketId()), payload,
+                                       endstone::core::EndstoneSocketAddress::fromNetworkIdentifier(id),
+                                       static_cast<int>(header.getRecipientSubId())};
+        server.getPluginManager().callEvent(e);
+        if (e.isCancelled()) {
+            continue;
+        }
+
+        if (e.getPayload().data() == payload.data()) {
+            return status;  // Nothing to do, the packet is the same, return immediately
+        }
+
+        // Plugins have changed the payload, keep header and replace the rest
+        out_data.resize(stream.getReadPointer());
+        out_data.append(e.getPayload().data(), e.getPayload().size());
+        return status;
     }
+}
+
+const NetworkIdentifier &BatchedNetworkPeer::getId() const
+{
+    auto peer = peer_;
+    while (peer->peer_) {
+        peer = peer->peer_;
+    }
+    return static_cast<RakNetConnector::RakNetNetworkPeer &>(*peer).getId();
 }
