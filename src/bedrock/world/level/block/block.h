@@ -120,16 +120,18 @@ private:
     friend class ItemStackBase;
     friend class ItemDescriptor;
 
-    BlockComponentStorage components_;                 // +8
-    DataID data_;                                      // +112
-    gsl::not_null<BlockType *> block_type_;            // +120
-    CachedComponentData cached_component_data_;        //
-    BlockComponentDirectData direct_data_;             //
-    std::vector<HashedString> tags_;                   //
-    BlockSerializationId serialization_id_;            //
-    HashType64 serialization_id_hash_;                 //
-    std::uint32_t serialization_id_hash_for_network_;  //
-    BlockRuntimeId network_id_;                        // +300
-    bool has_runtime_id_;                              //
+    BlockComponentStorage components_;
+    // DataID data_;
+    gsl::not_null<BlockType *> block_type_;
+    CachedComponentData cached_component_data_;
+    BlockComponentDirectData direct_data_;
+    std::vector<HashedString> tags_;
+    BlockSerializationId serialization_id_;
+    HashType64 serialization_id_hash_;
+    std::uint32_t serialization_id_hash_for_network_;
+    BlockRuntimeId network_id_;
+    std::unique_ptr<class IClientBlockData> client_data_;
+    DataID data_;
+    bool has_runtime_id_;
 };
 BEDROCK_STATIC_ASSERT_SIZE(Block, 280, 288);

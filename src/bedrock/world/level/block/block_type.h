@@ -181,7 +181,7 @@ public:
     [[nodiscard]] virtual bool isMultifaceBlock() const = 0;
     [[nodiscard]] virtual bool isSignalSource() const = 0;
     [[nodiscard]] virtual bool isConsumerComponent() const = 0;
-    [[nodiscard]] virtual bool canBeOriginalSurface() const = 0;
+    [[nodiscard]] virtual bool canBeOriginalSurface(bool) const = 0;
     [[nodiscard]] virtual bool isSilentWhenJumpingOff() const = 0;
     [[nodiscard]] virtual bool isValidAuxValue(int) const = 0;
     [[nodiscard]] virtual bool canFillAtPos(BlockSource &, BlockPos const &, Block const &) const = 0;
@@ -266,7 +266,6 @@ public:
     virtual void animateTickBedrockLegacy(BlockSource &, BlockPos const &, Random &) const = 0;
     virtual void animateTick(BlockSource &, BlockPos const &, Random &) const = 0;
     [[nodiscard]] virtual BlockType &init() = 0;
-    [[nodiscard]] virtual Brightness getLightEmission(Block const &) const = 0;
     [[nodiscard]] virtual Block const *tryLegacyUpgrade(DataID) const = 0;
     [[nodiscard]] virtual bool dealsContactDamage(Actor const &, Block const &, bool) const = 0;
     [[nodiscard]] virtual Block const *tryGetInfested(Block const &) const = 0;
@@ -287,6 +286,7 @@ public:
     [[nodiscard]] virtual int getExtraRenderLayers() const = 0;
     [[nodiscard]] virtual const HashedString &getCullingLayer() const = 0;
     [[nodiscard]] virtual Brightness getLight(Block const &) const = 0;
+    [[nodiscard]] virtual Brightness getLightEmission(Block const &) const = 0;
     [[nodiscard]] virtual Brightness getEmissiveBrightness(Block const &) const = 0;
     [[nodiscard]] virtual mce::Color getMapColor(BlockSource &, BlockPos const &, Block const &) const = 0;
     virtual void _onHitByActivatingAttack(BlockSource &, BlockPos const &, Actor *) const = 0;
