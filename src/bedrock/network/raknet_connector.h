@@ -17,6 +17,7 @@
 #include "bedrock/deps/raknet/rak_peer_interface.h"
 #include "bedrock/network/disconnection_request_info.h"
 #include "bedrock/network/network_identifier.h"
+#include "bedrock/network/rak_peer_helper.h"
 #include "bedrock/network/remote_connector.h"
 
 class RakNetConnector : public RemoteConnector {

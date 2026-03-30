@@ -281,18 +281,34 @@ class PacketHeader {
 public:
     static constexpr std::uint32_t NUM_CHANNEL_BITS = 1;
     static constexpr std::uint32_t NUM_CHANNELS = 2;
-    PacketHeader(SubClientId recipient_sub_id, MinecraftPacketIds packet_id, SubClientId sender_sub_id);
+    PacketHeader(SubClientId recipient_sub_id, MinecraftPacketIds packet_id, SubClientId sender_sub_id)
+        : header_data_(static_cast<std::uint32_t>(packet_id) & PACKET_ID_MASK |
+                       (static_cast<std::uint32_t>(recipient_sub_id) & SUBCLIENT_ID_MASK) << NUM_BITS_FOR_PACKETID |
+                       (static_cast<std::uint32_t>(sender_sub_id) & SUBCLIENT_ID_MASK)
+                           << (NUM_BITS_FOR_PACKETID + NUM_BITS_FOR_SUBID))
+    {
+    }
     static PacketHeader fromRaw(const std::uint32_t data)
     {
         PacketHeader header;
         header.header_data_ = data;
         return header;
     }
-    [[nodiscard]] MinecraftPacketIds getPacketId() const;
-    [[nodiscard]] SubClientId getRecipientSubId() const;
-    [[nodiscard]] SubClientId getSenderSubId() const;
+    [[nodiscard]] MinecraftPacketIds getPacketId() const
+    {
+        return static_cast<MinecraftPacketIds>(header_data_ & PACKET_ID_MASK);
+    }
+    [[nodiscard]] SubClientId getRecipientSubId() const
+    {
+        return static_cast<SubClientId>((header_data_ >> NUM_BITS_FOR_PACKETID) & SUBCLIENT_ID_MASK);
+    }
+    [[nodiscard]] SubClientId getSenderSubId() const
+    {
+        return static_cast<SubClientId>((header_data_ >> (NUM_BITS_FOR_PACKETID + NUM_BITS_FOR_SUBID)) &
+                                        SUBCLIENT_ID_MASK);
+    }
     [[nodiscard]] std::uint32_t getChannel() const;
-    void write(BinaryStream &);
+    void write(BinaryStream &stream) { stream.writeUnsignedVarInt(header_data_, "Header Data", nullptr); }
 
 private:
     static constexpr unsigned int NUM_BITS_FOR_SUBID = 2;
@@ -300,7 +316,7 @@ private:
     static constexpr uint32_t PACKET_ID_MASK = (1 << NUM_BITS_FOR_PACKETID) - 1;
     static constexpr uint32_t SUBCLIENT_ID_MASK = (1 << NUM_BITS_FOR_SUBID) - 1;
     std::uint32_t header_data_;
-    PacketHeader();
+    PacketHeader() = default;
 };
 static_assert(sizeof(PacketHeader) == 4);
 
