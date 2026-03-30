@@ -34,5 +34,7 @@ struct PlayerAuthenticationInfo {
     std::string nintendo_name;
     std::string play_station_name;
     std::string public_key;
+    std::string unknown0;  // TODO(fixme): what is this?
     mce::UUID authenticated_uuid;
+    std::byte unknown1;  // TODO(fixme): what is this?
 };

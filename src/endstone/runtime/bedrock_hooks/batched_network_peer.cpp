@@ -114,7 +114,7 @@ void BatchedNetworkPeer::sendPacket(const std::string &data, Reliability reliabi
     ReadOnlyBinaryStream stream(data, false);
     auto result = stream.getUnsignedVarInt().discardError();
     if (!result) {
-        const auto &server = entt::locator<endstone::core::EndstoneServer>::value();
+        const auto &server =  endstone::core::EndstoneServer::getInstance();
         server.getLogger().critical("BatchedNetworkPeer::sendPacket: Failed to parse raw packet header!");
         return;
     }
@@ -122,7 +122,7 @@ void BatchedNetworkPeer::sendPacket(const std::string &data, Reliability reliabi
     auto header = PacketHeader::fromRaw(result.value());
     const auto &id = getId();
 
-    const auto &server = entt::locator<endstone::core::EndstoneServer>::value();
+    const auto &server = endstone::core::EndstoneServer::getInstance();
     const auto *server_player =
         server.getServer().getMinecraft()->getServerNetworkHandler()->getServerPlayer(id, header.getSenderSubId());
     endstone::Player *player = nullptr;
