@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "bedrock/util/random.h"
 #include "bedrock/world/level/block_pos.h"
 #include "bedrock/world/level/dimension/dimension_type.h"
@@ -29,6 +31,11 @@ class BlockActor;
 class IBlockSource;
 class ILevel;
 class ItemStack;
+
+struct ResourceDrops {
+    std::vector<ItemStack> items;
+    int experience_count;
+};
 
 struct ResourceDropsContext {
     static ResourceDropsContext fromPlayerMining(const IBlockSource &block_source, const BlockPos &position,
