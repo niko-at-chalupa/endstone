@@ -32,7 +32,7 @@
 #include "bedrock/world/item/item_category.h"
 #include "bedrock/world/level/block/actor/block_actor_type.h"
 #include "bedrock/world/level/block/components/block_component_storage.h"
-#include "bedrock/world/level/block/flammable.h"
+#include "bedrock/world/level/block/resource_drops_context.h"
 #include "bedrock/world/level/block/states/block_state.h"
 #include "bedrock/world/level/block/tint_method.h"
 #include "bedrock/world/level/block_pos.h"
@@ -239,7 +239,8 @@ public:
                                               BlockType const &) const = 0;
     [[nodiscard]] virtual bool canBeBuiltOver(const Block &, BlockSource &, BlockPos const &) const = 0;
     virtual void triggerEvent(BlockSource &, BlockPos const &, int b0, int b1) const = 0;
-    // virtual void executeEvent(BlockSource &, BlockPos const &, Block const &, std::string const &, Actor &) const = 0;
+    // virtual void executeEvent(BlockSource &, BlockPos const &, Block const &, std::string const &, Actor &) const =
+    // 0;
     [[nodiscard]] virtual bool hasTag(BlockSource &, BlockPos const &, Block const &, std::string const &) const = 0;
     [[nodiscard]] virtual MobSpawnerData const *getMobToSpawn(SpawnConditions const &, BlockSource &) const = 0;
     [[nodiscard]] virtual bool shouldStopFalling(Actor &) const = 0;
@@ -388,7 +389,7 @@ private:
 protected:
     Brightness light_block_;
     Brightness light_emission_;
-    Color map_color_; // +400
+    Color map_color_;  // +400
     float friction_;
     NoteBlockInstrument note_block_instrument_;
     TintMethod tint_method_;

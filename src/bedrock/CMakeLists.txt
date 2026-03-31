@@ -118,6 +118,7 @@ add_library(bedrock STATIC
         world/level/block/campfire_block.cpp
         world/level/block/fire_block.cpp
         world/level/block/liquid_block.cpp
+        world/level/block/resource_drops_context.cpp
         world/level/block/vanilla_block_type_ids.cpp
         world/level/block/actor/beehive_block_actor.cpp
         world/level/block/actor/furnace_block_actor.cpp

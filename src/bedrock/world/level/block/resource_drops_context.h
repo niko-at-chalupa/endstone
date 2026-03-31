@@ -14,6 +14,10 @@
 
 #pragma once
 
+#include "bedrock/util/random.h"
+#include "bedrock/world/level/block_pos.h"
+#include "bedrock/world/level/dimension/dimension_type.h"
+
 enum class ResourceDropsCause : int {
     PlayerMining = 0,
     Explosion = 1,
@@ -21,17 +25,18 @@ enum class ResourceDropsCause : int {
     Other = 3,
 };
 
+class BlockActor;
+class IBlockSource;
+class ILevel;
+class ItemStack;
+
 struct ResourceDropsContext {
     static ResourceDropsContext fromPlayerMining(const IBlockSource &block_source, const BlockPos &position,
                                                  const ItemStack &used_item);
     static ResourceDropsContext fromExplosion(const IBlockSource &block_source, float explosion_radius,
                                               const BlockPos &position);
     static ResourceDropsContext fromProjectileHit(const IBlockSource &block_source, const BlockPos &position);
-    static ResourceDropsContext fromOtherCause(const IBlockSource &block_source, const BlockPos &position)
-    {
-        return {ResourceDropsCause::Other,    1.0, ItemStack::EMPTY_ITEM, block_source, position,
-                block_source.getDimensionId()};
-    }
+    static ResourceDropsContext fromOtherCause(const IBlockSource &block_source, const BlockPos &position);
     static ResourceDropsContext fromLootResolver(const IBlockSource &block_source, const BlockPos &position,
                                                  const ItemStack &used_item);
     [[nodiscard]] Random &getRandom() const;
@@ -47,10 +52,6 @@ struct ResourceDropsContext {
 
 private:
     ResourceDropsContext(ResourceDropsCause cause, float explosion_radius, const ItemStack &used_item,
-                         const IBlockSource &block_source, const BlockPos &block_pos, DimensionType dimension_type)
-        : cause(cause), explosion_radius(explosion_radius), used_item(used_item), block_pos(block_pos),
-          dimension_type(dimension_type), block_source_(block_source)
-    {
-    }
+                         const IBlockSource &block_source, const BlockPos &block_pos, DimensionType dimension_type);
     const IBlockSource &block_source_;
 };

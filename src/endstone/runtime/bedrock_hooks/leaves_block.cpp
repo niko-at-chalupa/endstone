@@ -105,6 +105,6 @@ void LeavesBlock::_die(BlockSource &region, const BlockPos &pos) const
     Randomize randomize(region.getLevel().getRandom());
     const auto &block = region.getBlock(pos);
     block.spawnResources(region, pos, randomize, ResourceDropsContext::fromOtherCause(region, pos));
-    region.setBlock(pos, BlockTypeRegistry::get().getDefaultBlockState(BedrockBlockNames::Air, false), UPDATE_ALL,
-                    nullptr, {});
+    region.setBlock(pos, region.getLevel().getBlockTypeRegistry()->getDefaultBlockState(BedrockBlockNames::Air, false),
+                    UPDATE_ALL, nullptr, {});
 }
