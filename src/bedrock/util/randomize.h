@@ -19,21 +19,10 @@
 
 class Randomize {
 public:
-    Randomize(IRandom &);
-    virtual ~Randomize() = default;
-    [[nodiscard]] virtual bool chance(int, int) const = 0;
-    [[nodiscard]] virtual bool chanceOneIn(int) const = 0;
-    [[nodiscard]] virtual bool chanceAllButOneIn(int) const = 0;
-    [[nodiscard]] virtual bool chanceFloatLessThan(float) const = 0;
-    [[nodiscard]] virtual bool chanceFloatLessOrEqual(float) const = 0;
-    [[nodiscard]] virtual bool chanceFloatGreaterThan(float) const = 0;
-    [[nodiscard]] virtual bool chanceFloatGreaterOrEqual(float) const = 0;
-    [[nodiscard]] virtual float nextFloat() const = 0;
-    [[nodiscard]] virtual int nextIntInclusive(int, int) const = 0;
-    [[nodiscard]] virtual int nextInt(int) const = 0;
+    Randomize(IRandom & random): random_(random) {}
 
 protected:
     Randomize();
     Bedrock::NonOwnerPointer<IRandom> random_;
 };
-static_assert(sizeof(Randomize) == 32);
+static_assert(sizeof(Randomize) == 24);

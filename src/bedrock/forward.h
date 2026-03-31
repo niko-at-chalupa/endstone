@@ -195,7 +195,6 @@ class RenderParams;
 class RepositoryPacks;
 class ResolvedItemIconInfo;
 class ResolvedTextObject;
-class ResourceDropsContext;
 class ResourceLoadManager;
 class ResourcePackFileUploadManager;
 class ResourcePackListener;

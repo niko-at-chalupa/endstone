@@ -35,9 +35,9 @@ public:
 };
 static_assert(sizeof(IPositionalRandomFactory) == 8);
 
-class IRandom {
+class IRandom : public Bedrock::EnableNonOwnerReferences {
 public:
-    virtual ~IRandom();
+    ~IRandom() override;
     virtual int nextInt() = 0;
     virtual int nextInt(int) = 0;
     virtual int64_t nextLong() = 0;
