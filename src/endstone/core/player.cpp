@@ -15,6 +15,7 @@
 #include "endstone/core/player.h"
 
 #include <magic_enum/magic_enum.hpp>
+#include <nlohmann/json.hpp>
 
 #include "bedrock/deps/raknet/rak_peer_interface.h"
 #include "bedrock/entity/components/user_entity_identifier_component.h"
@@ -135,9 +136,18 @@ void EndstonePlayer::sendMessage(const Message &message) const
                               pk.payload = {.body = TextPacketPayload::MessageOnly{TextPacketType::Raw, msg}};
                           },
                           [&](const Translatable &msg) {
-                              pk.payload = {.localize = true,
-                                            .body = TextPacketPayload::MessageAndParams{
-                                                TextPacketType::Translate, msg.getText(), msg.getParameters()}};
+                              nlohmann::json entry;
+                              entry["translate"] = msg.getText();
+                              if (!msg.getParameters().empty()) {
+                                  nlohmann::json with = nlohmann::json::array();
+                                  for (const auto &param : msg.getParameters()) {
+                                      with.push_back({{"text", param}});
+                                  }
+                                  entry["with"] = {{"rawtext", with}};
+                              }
+                              nlohmann::json rawtext = {{"rawtext", nlohmann::json::array({entry})}};
+                              pk.payload = {.body = TextPacketPayload::MessageOnly{
+                                                TextPacketType::TextObject, rawtext.dump()}};
                           }},
                message);
     getHandle().sendNetworkPacket(*packet);
