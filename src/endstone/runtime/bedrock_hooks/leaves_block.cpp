@@ -8,6 +8,7 @@
 #include "bedrock/world/level/block/vanilla_block_type_ids.h"
 #include "bedrock/world/phys/aabb.h"
 #include "endstone/core/block/block.h"
+#include "endstone/core/block/block_type.h"
 #include "endstone/core/server.h"
 #include "endstone/event/block/leaves_decay_event.h"
 
@@ -105,6 +106,9 @@ void LeavesBlock::_die(BlockSource &region, const BlockPos &pos) const
     Randomize randomize(region.getLevel().getRandom());
     const auto &block = region.getBlock(pos);
     block.spawnResources(region, pos, randomize, ResourceDropsContext::fromOtherCause(region, pos));
-    region.setBlock(pos, region.getLevel().getBlockTypeRegistry()->getDefaultBlockState(BedrockBlockNames::Air, false),
-                    UPDATE_ALL, nullptr, {});
+    auto &air = static_cast<const endstone::core::EndstoneBlockType &>(
+                    server.getRegistry<endstone::BlockType>().getOrThrow(endstone::BlockType::Air))
+                    .getHandle()
+                    .getDefaultState();
+    region.setBlock(pos, air, UPDATE_ALL, nullptr, {});
 }

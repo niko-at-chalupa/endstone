@@ -14,11 +14,22 @@
 
 #pragma once
 
-#include "bedrock/platform/brstd/function_ref.h"
-#include "bedrock/shared_ptr.h"
 #include "bedrock/world/level/block/block_type.h"
+#include "endstone/block/block_type.h"
 
-class BlockTypeRegistry {
+namespace endstone::core {
+
+class EndstoneBlockType : public endstone::BlockType {
 public:
-    void forEachBlockType(brstd::function_ref<bool(BlockType const &)> callback);
+    explicit EndstoneBlockType(const ::BlockType &block_type);
+    [[nodiscard]] BlockTypeId getId() const override;
+    [[nodiscard]] std::string getTranslationKey() const override;
+    [[nodiscard]] bool hasItemType() const override;
+    [[nodiscard]] std::unique_ptr<BlockData> createBlockData() const override;
+    [[nodiscard]] const ::BlockType &getHandle() const;
+
+private:
+    const ::BlockType &block_type_;
 };
+
+}  // namespace endstone::core
