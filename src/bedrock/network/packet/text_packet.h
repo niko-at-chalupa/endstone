@@ -67,27 +67,6 @@ struct TextPacketPayload {
 
 class TextPacket : public Packet {
 public:
-    static constexpr bool SHARE_WITH_HANDLER = false;
-
-    TextPacket();
-    TextPacket(TextPacketPayload);
-
-    [[nodiscard]] MinecraftPacketIds getId() const override;
-    [[nodiscard]] std::string_view getName() const override;
-    [[nodiscard]] SerializationMode getSerializationMode() const override;
-    void setSerializationMode(SerializationMode) override;
-    void writeWithSerializationMode(BinaryStream &, const cereal::ReflectionCtx &,
-                                    std::optional<SerializationMode>) const override;
-    void write(BinaryStream &, const cereal::ReflectionCtx &) const override;
-    Bedrock::Result<void> read(ReadOnlyBinaryStream &, const cereal::ReflectionCtx &) override;
-    void write(BinaryStream &) const override;
-    Bedrock::Result<void> read(ReadOnlyBinaryStream &) override;
-
-private:
-    Bedrock::Result<void> _read(ReadOnlyBinaryStream &) override;
-    Bedrock::Result<void> _read(ReadOnlyBinaryStream &, const cereal::ReflectionCtx &) override;
-
-public:
     TextPacketPayload payload;
     SerializationMode serialization_mode;
 };
