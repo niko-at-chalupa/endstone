@@ -1,47 +1,9 @@
 import pytest
 from endstone import Player
 from endstone.command import Command, CommandSender
-from endstone.event import PacketSendEvent, event_handler
 from endstone.plugin import Plugin
 
 from .tests.conftest import clear_runtime_context, set_runtime_context
-
-# Frequent packet IDs to filter out from logging
-FILTERED_PACKET_IDS = {
-    0x10,  # ServerPlayerPostMovePosition
-    0x12,  # MoveAbsoluteActor
-    0x13,  # MovePlayer
-    0x15,  # UpdateBlock
-    0x19,  # LevelEvent
-    0x27,  # SetActorData
-    0x28,  # SetActorMotion
-    0x3A,  # FullChunkData
-    0x6F,  # MoveDeltaActor
-    0x73,  # Ping
-    0x79,  # NetworkChunkPublisherUpdate
-    0x7B,  # LevelSoundEvent
-    0x87,  # ClientCacheBlobStatusPacket
-    0x88,  # ClientCacheMissResponsePacket
-    0x90,  # PlayerAuthInputPacket
-    0xA1,  # CorrectPlayerMovePredictionPacket
-    0xAE,  # SubChunkPacket
-    0xAF,  # SubChunkRequestPacket
-}
-
-
-class PacketListener:
-    def __init__(self, plugin: Plugin):
-        self.plugin = plugin
-
-    @event_handler
-    def on_packet_send(self, event: PacketSendEvent) -> None:
-        if event.packet_id in FILTERED_PACKET_IDS:
-            return
-        player_name = event.player.name if event.player else "N/A"
-        self.plugin.logger.info(
-            f"[PacketSend] id=0x{event.packet_id:02X} player={player_name} "
-            f"payload={event.payload.hex()}"
-        )
 
 
 class EndstoneTest(Plugin):
@@ -67,7 +29,6 @@ class EndstoneTest(Plugin):
 
     def on_enable(self) -> None:
         self.logger.info("on_enable is called!")
-        self.register_events(PacketListener(self))
         self.run_tests()
 
     def on_command(
