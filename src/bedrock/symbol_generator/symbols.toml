@@ -1,4 +1,4 @@
-timestamp = 1774894878
+timestamp = 1774998503
 version = "1.26.11"
 
 [windows]
@@ -17,6 +17,7 @@ version = "1.26.11"
 # BlockDescriptor::ResolveHelper
 "?resolve@ResolveHelper@BlockDescriptor@@QEAAX_N@Z" = 66013232
 # BlockType
+"?spawnResources@BlockType@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAVRandomize@@AEBUResourceDropsContext@@@Z" = 66295376
 "?tryGetStateFromLegacyData@BlockType@@QEBAPEBVBlock@@G@Z" = 66288544
 # BlockTypeRegistry
 "?forEachBlockType@BlockTypeRegistry@@QEAAXV?$function_ref@$$A6A_NAEBVBlockType@@@Z$$A6A_N0@Z@brstd@@@Z" = 68346000
@@ -57,6 +58,8 @@ version = "1.26.11"
 # ItemStackBase
 "?_loadBlocksForCanPlaceOnCanDestroy@ItemStackBase@@CA_NAEAV?$vector@PEBVBlockType@@V?$allocator@PEBVBlockType@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z" = 60429200
 "?init@ItemStackBase@@IEAAXHHH_N@Z" = 60386160
+# LeavesBlock
+"?randomTick@LeavesBlock@@QEBAXAEAVBlockRandomTickEvent@BlockEvents@@@Z" = 66554720
 # Level
 "?tick@Level@@UEAAXXZ" = 65186928
 # LiquidBlock
@@ -131,6 +134,7 @@ version = "1.26.11"
 # BlockDescriptor::ResolveHelper
 "_ZN15BlockDescriptor13ResolveHelper7resolveEb" = 177276592
 # BlockType
+"_ZNK9BlockType14spawnResourcesER11BlockSourceRK8BlockPosRK5BlockR9RandomizeRK20ResourceDropsContext" = 175969600
 "_ZNK9BlockType25tryGetStateFromLegacyDataEt" = 175961296
 # BlockTypeRegistry
 "_ZN17BlockTypeRegistry16forEachBlockTypeEN5brstd12function_refIFbRK9BlockTypeES5_EE" = 180607984
@@ -170,6 +174,8 @@ version = "1.26.11"
 # ItemStackBase
 "_ZN13ItemStackBase34_loadBlocksForCanPlaceOnCanDestroyERNSt3__16vectorIPK9BlockTypeNS0_9allocatorIS4_EEEERKNS0_12basic_stringIcNS0_11char_traitsIcEENS5_IcEEEE" = 173753712
 "_ZN13ItemStackBase4initEiiib" = 173712496
+# LeavesBlock
+"_ZNK11LeavesBlock10randomTickERN11BlockEvents20BlockRandomTickEventE" = 175379504
 # Level
 "_ZN5Level4tickEv" = 178493568
 # LiquidBlock

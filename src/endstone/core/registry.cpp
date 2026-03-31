@@ -21,7 +21,7 @@
 #include "endstone/core/block/block_type.h"
 #include "endstone/core/enchantments/enchantment.h"
 #include "endstone/core/inventory/item_type.h"
-#include "server.h"
+#include "endstone/core/server.h"
 
 namespace endstone::core {
 
