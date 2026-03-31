@@ -34,6 +34,7 @@
 #include "bedrock/world/events/event_coordinator.h"
 #include "bedrock/world/events/player_event_coordinator.h"
 #include "bedrock/world/inventory/ender_chest_inventory.h"
+#include "bedrock/world/inventory/furnace_options.h"
 #include "bedrock/world/inventory/inventory_options.h"
 #include "bedrock/world/inventory/transaction/inventory_transaction_manager.h"
 #include "bedrock/world/item/item_group.h"
@@ -220,8 +221,10 @@ protected:
     Bedrock::PubSub::PublisherPtr<void(const ContainerManagerModel *), Bedrock::PubSub::ThreadModel::SingleThreaded>
         container_manager_subscribers_;
     std::unique_ptr<PlayerInventory> inventory_;
-    // InventoryOptions inventory_options_;
-    int pad_[14];  // TODO(fixme): correct the InventoryOptions
+    InventoryOptions inventory_options_;
+    FurnaceOptions furnace_options_;
+    FurnaceOptions blast_furnace_options_;
+    FurnaceOptions smoker_options_;
     float distance_since_transform_event_;
     std::vector<ItemInstance> creative_item_list_;
     // std::array<std::vector<ItemGroup>, 4> filtered_creative_item_list_;

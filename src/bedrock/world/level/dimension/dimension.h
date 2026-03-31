@@ -118,8 +118,8 @@ private:
     std::unique_ptr<RuntimeLightingManager> runtime_lighting_manager_;
     std::string name_;
     DimensionType id_;
-    std::int16_t id_type_;  // TODO(fixme): real type: DimensionIdType
-    bool ultra_warm_;       // +390
+    const DimensionIdType registry_id_;
+    bool ultra_warm_;  // +390
     bool has_ceiling_;
     bool has_skylight_;
     Brightness sky_darken_;

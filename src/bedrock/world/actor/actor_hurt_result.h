@@ -14,27 +14,21 @@
 
 #pragma once
 
-#include <string>
+#include <optional>
 
-#include "bedrock/platform/uuid.h"
+class ActorHurtResult {
+public:
+    static ActorHurtResult createHurt();
+    static ActorHurtResult createNotHurt();
+    static ActorHurtResult createDamaged(float damage);
+    ActorHurtResult &setHurt(bool was_hurt);
+    ActorHurtResult &setShouldAllowKnockback(bool should_do_knockback);
+    bool wasHurt() const;
+    std::optional<float> getDamage() const;
+    bool shouldAllowKnockback() const;
 
-enum class PlayerAuthenticationType : int {
-    Invalid = -1,
-    Full = 0,
-    Guest = 1,
-    SelfSigned = 2,
-};
-
-struct PlayerAuthenticationInfo {
-    std::string xuid;
-    std::string play_fab_id;
-    std::string nintendo_id;
-    std::string psn_id;
-    std::string tenant_id;
-    std::string xbox_live_name;
-    std::string nintendo_name;
-    std::string play_station_name;
-    std::string public_key;
-    mce::UUID authenticated_uuid;
-    bool is_host;
+private:
+    ActorHurtResult(std::variant<bool, float>);
+    std::variant<bool, float> hurt_or_damage_;
+    bool should_allow_knockback_;
 };

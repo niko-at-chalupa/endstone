@@ -98,6 +98,7 @@ protected:
     private:
         std::unique_ptr<ConnectionRequest> primary_request_;
         PlayerAuthenticationInfo primary_player_info_;
+        std::string client_info_party_id_;
         std::unordered_map<SubClientId, PlayerAuthenticationInfo> sub_client_player_info_;
     };
     std::unordered_map<NetworkIdentifier, std::unique_ptr<Client>> clients_;  // +80

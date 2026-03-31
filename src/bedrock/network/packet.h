@@ -265,7 +265,13 @@ enum class MinecraftPacketIds : int {
     VoxelShapesPacket = 337,
     CameraSpline = 338,
     CameraAimAssistActorPriority = 339,
-    EndId = 340,
+    ResourcePacksReadyForValidation = 340,
+    LocatorBarPacket = 341,
+    PartyChanged = 342,
+    ServerboundDataDrivenScreenClosed = 343,
+    SyncWorldClocks = 344,
+    ClientboundAttributeLayerSyncPacket = 345,
+    EndId = 346,
 };
 
 class NetEventCallback;
