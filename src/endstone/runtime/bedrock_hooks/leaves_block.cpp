@@ -2,7 +2,6 @@
 
 #include <array>
 
-#include "bedrock/util/randomize.h"
 #include "bedrock/world/level/block/resource_drops_context.h"
 #include "bedrock/world/level/block/states/vanilla_block_states.h"
 #include "bedrock/world/level/block/vanilla_block_type_ids.h"
@@ -103,9 +102,9 @@ void LeavesBlock::_die(BlockSource &region, const BlockPos &pos) const
     }
     // Endstone ends
 
-    Randomize randomize(region.getLevel().getRandom());
+    auto &random = region.getLevel().getRandom();
     const auto &block = region.getBlock(pos);
-    block.spawnResources(region, pos, randomize, ResourceDropsContext::fromOtherCause(region, pos));
+    block.spawnResources(region, pos, random, ResourceDropsContext::fromOtherCause(region, pos));
     auto &air = static_cast<const endstone::core::EndstoneBlockType &>(
                     server.getRegistry<endstone::BlockType>().getOrThrow(endstone::BlockType::Air))
                     .getHandle()

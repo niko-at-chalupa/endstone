@@ -21,7 +21,6 @@
 #include "bedrock/bedrock.h"
 #include "bedrock/core/string/string_hash.h"
 #include "bedrock/nbt/compound_tag.h"
-#include "bedrock/util/randomize.h"
 #include "bedrock/world/level/block/block_serialization_id.h"
 #include "bedrock/world/level/block/block_type.h"
 #include "bedrock/world/level/block/components/block_component_direct_data.h"
@@ -78,7 +77,7 @@ public:
     [[nodiscard]] float getThickness() const;
     bool getSecondPart(const BlockSource &region, const BlockPos &pos, BlockPos &out) const;
     void destroy(BlockSource &region, const BlockPos &pos, Actor *entity_source) const;
-    void spawnResources(BlockSource &region, const BlockPos &pos, Randomize &randomize,
+    void spawnResources(BlockSource &region, const BlockPos &pos, IRandom &random,
                         const ResourceDropsContext &resource_drops_context) const;
     [[nodiscard]] const Material &getMaterial() const;
     [[nodiscard]] float getFriction() const;

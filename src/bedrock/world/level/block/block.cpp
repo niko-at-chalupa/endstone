@@ -130,11 +130,11 @@ void Block::destroy(BlockSource &region, const BlockPos &pos, Actor *entity_sour
     getBlockType().destroy(region, pos, *this, entity_source);
 }
 
-void Block::spawnResources(BlockSource &region, const BlockPos &pos, Randomize &randomize,
+void Block::spawnResources(BlockSource &region, const BlockPos &pos, IRandom &random,
                            const ResourceDropsContext &resource_drops_context) const
 {
     if (!region.getLevel().isClientSide()) {
-        getBlockType().spawnResources(region, pos, *this, randomize, resource_drops_context);
+        getBlockType().spawnResources(region, pos, *this, random, resource_drops_context);
     }
 }
 

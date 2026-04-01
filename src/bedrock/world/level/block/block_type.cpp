@@ -68,7 +68,7 @@ float BlockType::getThickness() const
     return thickness_;
 }
 
-void BlockType::spawnResources(BlockSource &region, const BlockPos &pos, const Block &block, Randomize &randomize,
+void BlockType::spawnResources(BlockSource &region, const BlockPos &pos, const Block &block, IRandom &randomize,
                                const ResourceDropsContext &resource_drops_context) const
 {
     // auto [items, experience_count] = getResourceDrops(block, randomize, resource_drops_context);

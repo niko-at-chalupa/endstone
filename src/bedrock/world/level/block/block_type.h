@@ -27,7 +27,6 @@
 #include "bedrock/resources/base_game_version.h"
 #include "bedrock/util/int_range.h"
 #include "bedrock/util/random.h"
-#include "bedrock/util/randomize.h"
 #include "bedrock/world/direction.h"
 #include "bedrock/world/flip.h"
 #include "bedrock/world/item/item_category.h"
@@ -332,9 +331,9 @@ public:
     [[nodiscard]] bool requiresCorrectToolForDrops() const;
     [[nodiscard]] bool isSolid() const;
     [[nodiscard]] float getThickness() const;
-    void spawnResources(BlockSource &region, const BlockPos &pos, const Block &block, Randomize &randomize,
+    void spawnResources(BlockSource &region, const BlockPos &pos, const Block &block, IRandom &randomize,
                         const ResourceDropsContext &resource_drops_context) const;
-    ResourceDrops getResourceDrops(const Block &block, Randomize &randomize,
+    ResourceDrops getResourceDrops(const Block &block, IRandom &random,
                                    const ResourceDropsContext &resource_drops_context) const;
     static ItemActor *popResource(BlockSource &region, const BlockPos &pos, const ItemStack &item_stack);
     [[nodiscard]] float getTranslucency() const;
