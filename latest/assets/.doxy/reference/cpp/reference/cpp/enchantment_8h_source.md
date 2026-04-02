@@ -117,6 +117,8 @@ public:
 
     static constexpr auto Breach = EnchantmentId::minecraft("breach");
 
+    static constexpr auto Lunge = EnchantmentId::minecraft("lunge");
+
     virtual ~Enchantment() = default;
 
     [[nodiscard]] virtual EnchantmentId getId() const = 0;

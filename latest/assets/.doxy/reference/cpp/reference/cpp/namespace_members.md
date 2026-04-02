@@ -15,6 +15,7 @@
 * **BarStyle** ([**endstone**](namespaceendstone.md))
 * **BlockFace** ([**endstone**](namespaceendstone.md))
 * **BlockStates** ([**endstone**](namespaceendstone.md))
+* **BlockTypeId** ([**endstone**](namespaceendstone.md))
 * **ByteArrayTag** ([**endstone**](namespaceendstone.md))
 * **ByteTag** ([**endstone**](namespaceendstone.md))
 

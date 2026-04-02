@@ -49,6 +49,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**endstone::Block**](classendstone_1_1Block.md) _Represents a block._ 
 * **class** [**endstone::BlockData**](classendstone_1_1BlockData.md) _Represents the data related to a live block._ 
 * **class** [**endstone::BlockState**](classendstone_1_1BlockState.md) _Represents a captured state of a block, which will not update automatically._ 
+* **class** [**endstone::BlockType**](classendstone_1_1BlockType.md) 
 * **class** [**endstone::ItemMeta**](classendstone_1_1ItemMeta.md) _Represents the metadata of a generic item._     
     * **class** [**endstone::CrossbowMeta**](classendstone_1_1CrossbowMeta.md) _Represents the meta for a crossbow that can have a charged projectile._ 
     * **class** [**endstone::MapMeta**](classendstone_1_1MapMeta.md) _Represents the metadata for a map item._ 
@@ -273,6 +274,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **struct** [**fmt::formatter&lt; endstone::BlockStates &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::BlockStates::mapped\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1mapped__type_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::BlockStates::value\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4.md) 
+    * **struct** [**fmt::formatter&lt; endstone::BlockType &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ByteArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ByteTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::Chunk &gt;**](structfmt_1_1formatter_3_01endstone_1_1Chunk_01_4.md) 

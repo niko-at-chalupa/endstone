@@ -11,6 +11,7 @@
 ## b
 
 * **BlockStates** ([**endstone**](namespaceendstone.md))
+* **BlockTypeId** ([**endstone**](namespaceendstone.md))
 * **ByteArrayTag** ([**endstone**](namespaceendstone.md))
 * **ByteTag** ([**endstone**](namespaceendstone.md))
 

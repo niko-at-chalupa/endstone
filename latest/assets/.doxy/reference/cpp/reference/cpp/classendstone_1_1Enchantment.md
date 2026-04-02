@@ -59,6 +59,7 @@
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Looting**](#variable-looting)   = `EnchantmentId::minecraft("looting")`<br>_Provides a chance of gaining extra loot when killing monsters._  |
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Loyalty**](#variable-loyalty)   = `EnchantmentId::minecraft("loyalty")`<br>_Causes a thrown trident to return to the player who threw it._  |
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**LuckOfTheSea**](#variable-luckofthesea)   = `EnchantmentId::minecraft("luck\_of\_the\_sea")`<br>_Decreases odds of catching worthless junk._  |
+|  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Lunge**](#variable-lunge)   = `EnchantmentId::minecraft("lunge")`<br>_Applied to spears, causes jab attacks to propel the wielder forward horizontally._  |
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Lure**](#variable-lure)   = `EnchantmentId::minecraft("lure")`<br>_Increases rate of fish biting your hook._  |
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Mending**](#variable-mending)   = `EnchantmentId::minecraft("mending")`<br>_Allows mending the item using experience orbs._  |
 |  [**constexpr**](classendstone_1_1Identifier.md) [**auto**](classendstone_1_1Identifier.md) | [**Multishot**](#variable-multishot)   = `EnchantmentId::minecraft("multishot")`<br>_Shoot multiple arrows from crossbows._  |
@@ -440,6 +441,20 @@ constexpr auto endstone::Enchantment::Loyalty;
 _Decreases odds of catching worthless junk._ 
 ```C++
 constexpr auto endstone::Enchantment::LuckOfTheSea;
+```
+
+
+
+
+<hr>
+
+
+
+### variable Lunge 
+
+_Applied to spears, causes jab attacks to propel the wielder forward horizontally._ 
+```C++
+constexpr auto endstone::Enchantment::Lunge;
 ```
 
 

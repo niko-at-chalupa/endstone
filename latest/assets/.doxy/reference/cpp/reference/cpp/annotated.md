@@ -35,6 +35,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**BlockPistonRetractEvent**](classendstone_1_1BlockPistonRetractEvent.md) _Called when a piston retracts._     
     * **class** [**BlockPlaceEvent**](classendstone_1_1BlockPlaceEvent.md) _Called when a block is placed by a player._     
     * **class** [**BlockState**](classendstone_1_1BlockState.md) _Represents a captured state of a block, which will not update automatically._     
+    * **class** [**BlockType**](classendstone_1_1BlockType.md)     
     * **class** [**BookMeta**](classendstone_1_1BookMeta.md) _Represents the meta for a written book that can have a title, an author, and pages._     
     * **class** [**BossBar**](classendstone_1_1BossBar.md) _Represents a boss bar that is displayed to players._     
     * **class** [**BroadcastMessageEvent**](classendstone_1_1BroadcastMessageEvent.md) [_**Event**_](classendstone_1_1Event.md) _triggered for server broadcast messages such as from_[_**Server::broadcast**_](classendstone_1_1Server.md#function-broadcast) _._    
@@ -194,6 +195,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **struct** [**formatter&lt; endstone::BlockStates &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_01_4.md)     
     * **struct** [**formatter&lt; endstone::BlockStates::mapped\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1mapped__type_01_4.md)     
     * **struct** [**formatter&lt; endstone::BlockStates::value\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4.md)     
+    * **struct** [**formatter&lt; endstone::BlockType &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4.md)     
     * **struct** [**formatter&lt; endstone::ByteArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::ByteTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::Chunk &gt;**](structfmt_1_1formatter_3_01endstone_1_1Chunk_01_4.md)     

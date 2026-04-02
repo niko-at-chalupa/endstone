@@ -66,6 +66,7 @@ _Represents a button with text and an optional icon._
 | class | [**BlockPistonRetractEvent**](classendstone_1_1BlockPistonRetractEvent.md) <br>_Called when a piston retracts._  |
 | class | [**BlockPlaceEvent**](classendstone_1_1BlockPlaceEvent.md) <br>_Called when a block is placed by a player._  |
 | class | [**BlockState**](classendstone_1_1BlockState.md) <br>_Represents a captured state of a block, which will not update automatically._  |
+| class | [**BlockType**](classendstone_1_1BlockType.md) <br> |
 | class | [**BookMeta**](classendstone_1_1BookMeta.md) <br>_Represents the meta for a written book that can have a title, an author, and pages._  |
 | class | [**BossBar**](classendstone_1_1BossBar.md) <br>_Represents a boss bar that is displayed to players._  |
 | class | [**BroadcastMessageEvent**](classendstone_1_1BroadcastMessageEvent.md) <br>[_**Event**_](classendstone_1_1Event.md) _triggered for server broadcast messages such as from_[_**Server::broadcast**_](classendstone_1_1Server.md#function-broadcast) _._ |
@@ -216,6 +217,7 @@ _Represents a button with text and an optional icon._
 | enum  | [**BarStyle**](#enum-barstyle)  <br> |
 | enum  | [**BlockFace**](#enum-blockface)  <br>_Represents the face of a block._  |
 | typedef std::unordered\_map&lt; std::string, std::variant&lt; [**bool**](classendstone_1_1Identifier.md), std::string, [**int**](classendstone_1_1Identifier.md) &gt; &gt; | [**BlockStates**](#typedef-blockstates)  <br> |
+| typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**BlockType**](classendstone_1_1BlockType.md) &gt; | [**BlockTypeId**](#typedef-blocktypeid)  <br> |
 | typedef [**nbt::ArrayTag**](classendstone_1_1nbt_1_1ArrayTag.md)&lt; std::uint8\_t &gt; | [**ByteArrayTag**](#typedef-bytearraytag)  <br> |
 | typedef [**nbt::ValueTag**](classendstone_1_1nbt_1_1ValueTag.md)&lt; std::uint8\_t &gt; | [**ByteTag**](#typedef-bytetag)  <br> |
 | enum  | [**DisplaySlot**](#enum-displayslot)  <br>_Locations for displaying objectives to the player._  |
@@ -410,6 +412,19 @@ enum endstone::BlockFace {
 
 ```C++
 using endstone::BlockStates = typedef std::unordered_map<std::string, std::variant<bool, std::string, int> >;
+```
+
+
+
+
+<hr>
+
+
+
+### typedef BlockTypeId 
+
+```C++
+using endstone::BlockTypeId = typedef Identifier<BlockType>;
 ```
 
 

@@ -336,6 +336,19 @@
     <member refid="classendstone_1_1BlockState_1a4d603b37f4b38df4151ced22c7f78331" kind="function"><name>update</name></member>
     <member refid="classendstone_1_1BlockState_1a6bb9b025f0e02b8ec732e6a74c27b599" kind="function"><name>update</name></member>
   </compound>
+  <compound refid="classendstone_1_1BlockType" kind="class"><name>endstone::BlockType</name>
+    <member refid="classendstone_1_1BlockType_1aeae830d84b5168ebccfe9775be5e8bfc" kind="variable"><name>Air</name></member>
+    <member refid="classendstone_1_1BlockType_1aef5f33db31b229ee8fc21b393c618834" kind="function"><name>~BlockType</name></member>
+    <member refid="classendstone_1_1BlockType_1a16ff74eab9be4e013523a4ee883aa3d8" kind="function"><name>getId</name></member>
+    <member refid="classendstone_1_1BlockType_1adcbd825271a8538faa720ad9f2a081c8" kind="function"><name>getTranslationKey</name></member>
+    <member refid="classendstone_1_1BlockType_1a853a735ab1fa78eeffbebb300e3c749f" kind="function"><name>hasItemType</name></member>
+    <member refid="classendstone_1_1BlockType_1aa415d093dbd60f47b0cb358d70c2ddb7" kind="function"><name>createBlockData</name></member>
+    <member refid="classendstone_1_1BlockType_1a648a10ad4ac667ae63884bd441d1d633" kind="function"><name>operator==</name></member>
+    <member refid="classendstone_1_1BlockType_1ad6a201aa112589b2346940f240a19459" kind="function"><name>operator!=</name></member>
+    <member refid="classendstone_1_1BlockType_1aa4416f0aa6469554312ad573336762d0" kind="function"><name>operator==</name></member>
+    <member refid="classendstone_1_1BlockType_1a70a5f29fd9cdfc94218d10a6fe159333" kind="function"><name>operator!=</name></member>
+    <member refid="classendstone_1_1BlockType_1a40b2a8b6e6153584e6431b195cc041ff" kind="function"><name>operator BlockTypeId</name></member>
+  </compound>
   <compound refid="classendstone_1_1BookMeta" kind="class"><name>endstone::BookMeta</name>
     <member refid="classendstone_1_1BookMeta_1a0575b8edcc2727899e4e44fcc941e737" kind="enum"><name>Generation</name></member>
     <member refid="classendstone_1_1BookMeta_1a0575b8edcc2727899e4e44fcc941e737a0a52da7a03a6de3beefe54f8c03ad80d" kind="enumvalue"><name>Original</name></member>
@@ -767,6 +780,7 @@
     <member refid="classendstone_1_1Enchantment_1a94d6dbb5f544f8b1ac328dcd02c9bc1c" kind="variable"><name>WindBurst</name></member>
     <member refid="classendstone_1_1Enchantment_1a72cc616fb733110b6e50e0aea44858b3" kind="variable"><name>Density</name></member>
     <member refid="classendstone_1_1Enchantment_1a940db5ad3f732d219e93c15790e1dcda" kind="variable"><name>Breach</name></member>
+    <member refid="classendstone_1_1Enchantment_1a0132e6577e1f0b7a07dd407d112ea227" kind="variable"><name>Lunge</name></member>
     <member refid="classendstone_1_1Enchantment_1a52f4acd21d110aa3cf5ca3e41815310c" kind="function"><name>~Enchantment</name></member>
     <member refid="classendstone_1_1Enchantment_1a4e877f661219c78647b888f3c5b41a9a" kind="function"><name>getId</name></member>
     <member refid="classendstone_1_1Enchantment_1a2c9d36d8189de57bcff77586591e9c05" kind="function"><name>getTranslationKey</name></member>
@@ -848,6 +862,10 @@
   <compound refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4" kind="struct"><name>fmt::formatter&lt; endstone::BlockStates::value_type &gt;</name>
     <member refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4_1aad09b775459795e7252f362372b83072" kind="typedef"><name>Type</name></member>
     <member refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4_1adc0e1b7666aff1112b9b54564d09366d" kind="function"><name>format</name></member>
+  </compound>
+  <compound refid="structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4" kind="struct"><name>fmt::formatter&lt; endstone::BlockType &gt;</name>
+    <member refid="structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4_1abb9401686da278993ef9e4fdc1c703e8" kind="typedef"><name>Type</name></member>
+    <member refid="structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4_1a9954f70db94cc21253704e0139eec17d" kind="function"><name>format</name></member>
   </compound>
   <compound refid="structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4" kind="struct"><name>fmt::formatter&lt; endstone::ByteArrayTag &gt;</name>
     <member refid="structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4_1ae06fa5b25129aa9c443113e60a945c6c" kind="function"><name>format</name></member>
@@ -2607,6 +2625,7 @@
     <member refid="namespaceendstone_1ae444241ed516d06f778078ee798db9e9a6af4bf214d6cf054f9528da5b6054817" kind="enumvalue"><name>Hearts</name></member>
     <member refid="namespaceendstone_1ac2d399872c391e7ce2ec1896ba62e669" kind="typedef"><name>AttributeId</name></member>
     <member refid="namespaceendstone_1a688abbe501a61374454a55553d25e08f" kind="typedef"><name>BlockStates</name></member>
+    <member refid="namespaceendstone_1a4b4a61600576d63a4a5aeb9758ee1096" kind="typedef"><name>BlockTypeId</name></member>
     <member refid="namespaceendstone_1a1de715f3cef3cb85cbef38b7ec0ee3db" kind="typedef"><name>EffectId</name></member>
     <member refid="namespaceendstone_1a996c90f609bfd792a8245bb60fd3e4ea" kind="typedef"><name>EnchantmentId</name></member>
     <member refid="namespaceendstone_1a38ff2441d6476b407a46c5868fd25cd3" kind="typedef"><name>ItemTypeId</name></member>
@@ -2726,6 +2745,8 @@
   <compound refid="block__face_8h" kind="file"><name>block_face.h</name>
   </compound>
   <compound refid="block__state_8h" kind="file"><name>block_state.h</name>
+  </compound>
+  <compound refid="block__type_8h" kind="file"><name>block_type.h</name>
   </compound>
   <compound refid="bar__color_8h" kind="file"><name>bar_color.h</name>
   </compound>

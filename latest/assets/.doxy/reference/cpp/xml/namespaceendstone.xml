@@ -32,6 +32,7 @@
     <innerclass refid="classendstone_1_1BlockPistonRetractEvent" prot="public">endstone::BlockPistonRetractEvent</innerclass>
     <innerclass refid="classendstone_1_1BlockPlaceEvent" prot="public">endstone::BlockPlaceEvent</innerclass>
     <innerclass refid="classendstone_1_1BlockState" prot="public">endstone::BlockState</innerclass>
+    <innerclass refid="classendstone_1_1BlockType" prot="public">endstone::BlockType</innerclass>
     <innerclass refid="classendstone_1_1BookMeta" prot="public">endstone::BookMeta</innerclass>
     <innerclass refid="classendstone_1_1BossBar" prot="public">endstone::BossBar</innerclass>
     <innerclass refid="classendstone_1_1BroadcastMessageEvent" prot="public">endstone::BroadcastMessageEvent</innerclass>
@@ -887,6 +888,20 @@
         <inbodydescription>
         </inbodydescription>
         <location file="include/endstone/block/block_data.h" line="29" column="1" bodyfile="include/endstone/block/block_data.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceendstone_1a4b4a61600576d63a4a5aeb9758ee1096" prot="public" static="no">
+        <type><ref refid="classendstone_1_1Identifier" kindref="compound">Identifier</ref>&lt; <ref refid="classendstone_1_1BlockType" kindref="compound">BlockType</ref> &gt;</type>
+        <definition>using endstone::BlockTypeId = typedef Identifier&lt;BlockType&gt;</definition>
+        <argsstring></argsstring>
+        <name>BlockTypeId</name>
+        <qualifiedname>endstone::BlockTypeId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/endstone/block/block_type.h" line="32" column="1" bodyfile="include/endstone/block/block_type.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="namespaceendstone_1a1de715f3cef3cb85cbef38b7ec0ee3db" prot="public" static="no">
         <type><ref refid="classendstone_1_1Identifier" kindref="compound">Identifier</ref>&lt; <ref refid="classendstone_1_1Identifier" kindref="compound">class</ref> <ref refid="classendstone_1_1EffectType" kindref="compound">EffectType</ref> &gt;</type>
