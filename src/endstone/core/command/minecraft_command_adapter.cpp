@@ -14,6 +14,7 @@
 
 #include "endstone/core/command/minecraft_command_adapter.h"
 
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -82,21 +83,24 @@ std::string_view rstrip(std::string_view str, std::string_view chars = " \t\n\r\
     return str.substr(0, end);
 }
 
-std::string_view parseNode(const CommandRegistry::ParseToken &root)
+std::optional<std::string_view> parseNode(const CommandRegistry::ParseToken &root)
 {
     // If there are no children, this is a leaf text node.
     if (!root.child) {
+        if (root.length == 0) {
+            return std::nullopt;
+        }
         if (root.type == CommandRegistry::HardNonTerminal::Id) {
             return removeQuotes({root.text, root.length});
         }
-        return {root.text, root.length};
+        return std::string_view{root.text, root.length};
     }
 
     // Otherwise:
     const auto &child = *root.child;
     const auto *begin = findFirstWithText(&child);
     if (!begin) {
-        return "";
+        return std::nullopt;
     }
 
     // (1) If this node has no next sibling, it's the last argument: consume all remaining text until the end
@@ -137,6 +141,8 @@ bool CommandRegistry::parse<endstone::core::MinecraftCommandAdapter>(void *stora
         return false;
     }
     auto &output = static_cast<endstone::core::MinecraftCommandAdapter *>(storage)->args_;
-    output.emplace_back(parseNode(token));
+    if (auto result = parseNode(token)) {
+        output.emplace_back(*result);
+    }
     return true;
 }

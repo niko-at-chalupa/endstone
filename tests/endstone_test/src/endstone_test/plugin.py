@@ -14,14 +14,23 @@ class EndstoneTest(Plugin):
             "description": "Run the tests",
             "usages": ["/test"],
             "permissions": ["endstone_test.command.test"],
-        }
+        },
+        "testoptmsg": {
+            "description": "Test command with optional message argument",
+            "usages": ["/testoptmsg [msg: message]"],
+            "permissions": ["endstone_test.command.testoptmsg"],
+        },
     }
 
     permissions = {
         "endstone_test.command.test": {
             "description": "Allow users to use the /test command.",
             "default": "op",
-        }
+        },
+        "endstone_test.command.testoptmsg": {
+            "description": "Allow users to use the /testoptmsg command.",
+            "default": "op",
+        },
     }
 
     def on_load(self) -> None:
@@ -36,6 +45,9 @@ class EndstoneTest(Plugin):
     ) -> bool:
         if command.name == "test" and isinstance(sender, Player):
             self.run_tests(player=sender)
+            return True
+        if command.name == "testoptmsg":
+            self.last_testoptmsg_args = list(args)
             return True
         return False
 
