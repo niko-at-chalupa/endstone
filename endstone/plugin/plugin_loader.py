@@ -85,7 +85,7 @@ sys._base_executable = sys.executable
 
 
 class PythonPluginLoader(PluginLoader):
-    SUPPORTED_API = ["0.5", "0.6", "0.7", "0.8", "0.9", "0.10", "0.11"]
+    SUPPORTED_API = ["0.5", "0.6", "0.7", "0.8", "0.9", "0.10", "0.11", "0.12"]
 
     def __init__(self, server: Server):
         PluginLoader.__init__(self, server)
