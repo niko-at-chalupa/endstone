@@ -13,6 +13,7 @@
 
 
 
+Inherits the following classes: [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
 
 
 
@@ -23,6 +24,19 @@
 
 
 
+
+
+
+
+
+
+## Public Types inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; | [**Id**](classendstone_1_1Registry_1_1Type.md#typedef-id)  <br> |
 
 
 
@@ -52,20 +66,75 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Public Functions
 
 | Type | Name |
 | ---: | :--- |
 | virtual std::unique\_ptr&lt; [**BlockData**](classendstone_1_1BlockData.md) &gt; | [**createBlockData**](#function-createblockdata) () const = 0<br>_Creates a new_ [_**BlockData**_](classendstone_1_1BlockData.md) _instance for this block type, with all properties initialized to unspecified defaults._ |
-| virtual [**BlockTypeId**](classendstone_1_1Identifier.md) | [**getId**](#function-getid) () const = 0<br>_Return the identifier of this block type._  |
-| virtual std::string | [**getTranslationKey**](#function-gettranslationkey) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
 | virtual [**bool**](classendstone_1_1Identifier.md) | [**hasItemType**](#function-hasitemtype) () const = 0<br>_Returns true if this_ [_**BlockType**_](classendstone_1_1BlockType.md) _has a corresponding_[_**ItemType**_](classendstone_1_1ItemType.md) _._ |
-|   | [**operator BlockTypeId**](#function-operator-blocktypeid) () const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator) ([**const**](classendstone_1_1Identifier.md) [**BlockTypeId**](classendstone_1_1Identifier.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**BlockType**](classendstone_1_1BlockType.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**BlockTypeId**](classendstone_1_1Identifier.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**BlockType**](classendstone_1_1BlockType.md) & other) const<br> |
-| virtual  | [**~BlockType**](#function-blocktype) () = default<br> |
+
+
+## Public Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| virtual [**Id**](classendstone_1_1Identifier.md) | [**getId**](classendstone_1_1Registry_1_1Type.md#function-getid) () const = 0<br>_Return the identifier of this object._  |
+| virtual std::string | [**getTranslationKey**](classendstone_1_1Registry_1_1Type.md#function-gettranslationkey) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
+|   | [**operator Id**](classendstone_1_1Registry_1_1Type.md#function-operator-id) () const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+| virtual  | [**~Type**](classendstone_1_1Registry_1_1Type.md#function-type) () = default<br> |
+
+
+
+
+## Public Static Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+|  [**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) \* | [**get**](classendstone_1_1Registry_1_1Type.md#function-get) ([**Id**](classendstone_1_1Identifier.md) id) <br>_Look up a registry entry by identifier._  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -139,56 +208,6 @@ new data instance
 
 
 
-### function getId 
-
-_Return the identifier of this block type._ 
-```C++
-virtual BlockTypeId endstone::BlockType::getId () const = 0
-```
-
-
-
-
-
-**Returns:**
-
-this block type's identifier 
-
-
-
-
-
-        
-
-<hr>
-
-
-
-### function getTranslationKey 
-
-_Get the translation key, suitable for use in a translation component._ 
-```C++
-virtual std::string endstone::BlockType::getTranslationKey () const = 0
-```
-
-
-
-
-
-**Returns:**
-
-the translation key 
-
-
-
-
-
-        
-
-<hr>
-
-
-
 ### function hasItemType 
 
 _Returns true if this_ [_**BlockType**_](classendstone_1_1BlockType.md) _has a corresponding_[_**ItemType**_](classendstone_1_1ItemType.md) _._
@@ -209,92 +228,6 @@ true if there is a corresponding [**ItemType**](classendstone_1_1ItemType.md), o
 
 
         
-
-<hr>
-
-
-
-### function operator BlockTypeId 
-
-```C++
-inline endstone::BlockType::operator BlockTypeId () const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::BlockType::operator!= (
-    const  BlockTypeId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::BlockType::operator!= (
-    const  BlockType & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::BlockType::operator== (
-    const  BlockTypeId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::BlockType::operator== (
-    const  BlockType & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function ~BlockType 
-
-```C++
-virtual endstone::BlockType::~BlockType () = default
-```
-
-
-
 
 <hr>
 

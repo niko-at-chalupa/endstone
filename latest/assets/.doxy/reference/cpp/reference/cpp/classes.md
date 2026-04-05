@@ -166,8 +166,6 @@
 ([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::BlockStates::value\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4.md)
 ([**fmt**](namespacefmt.md))
-* [**formatter&lt; endstone::BlockType &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4.md)
-([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::ByteArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4.md)
 ([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::ByteTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4.md)
@@ -194,8 +192,6 @@
 ([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::ItemStack &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemStack_01_4.md)
 ([**fmt**](namespacefmt.md))
-* [**formatter&lt; endstone::ItemType &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4.md)
-([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::ListTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ListTag_01_4.md)
 ([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::Location &gt;**](structfmt_1_1formatter_3_01endstone_1_1Location_01_4.md)
@@ -211,6 +207,8 @@
 * [**formatter&lt; endstone::StringTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1StringTag_01_4.md)
 ([**fmt**](namespacefmt.md))
 * [**formatter&lt; endstone::Vector &gt;**](structfmt_1_1formatter_3_01endstone_1_1Vector_01_4.md)
+([**fmt**](namespacefmt.md))
+* [**formatter&lt; T &gt;**](structfmt_1_1formatter_3_01T_01_4.md)
 ([**fmt**](namespacefmt.md))
 
 
@@ -469,6 +467,8 @@
 ([**endstone**](namespaceendstone.md))
 * [**Translatable**](classendstone_1_1Translatable.md)
 ([**endstone**](namespaceendstone.md))
+* [**Type**](classendstone_1_1Registry_1_1Type.md)
+([**endstone::Registry**](classendstone_1_1Registry.md))
 
 
 ## u

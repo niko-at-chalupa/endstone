@@ -13,6 +13,7 @@
 
 
 
+Inherits the following classes: [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
 
 
 
@@ -23,6 +24,19 @@
 
 
 
+
+
+
+
+
+
+## Public Types inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; | [**Id**](classendstone_1_1Registry_1_1Type.md#typedef-id)  <br> |
 
 
 
@@ -52,23 +66,79 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Public Functions
 
 | Type | Name |
 | ---: | :--- |
 | virtual [**ItemStack**](classendstone_1_1ItemStack.md) | [**createItemStack**](#function-createitemstack-12) () const = 0<br>_Constructs a new_ [_**ItemStack**_](classendstone_1_1ItemStack.md) _with this item type that has the amount 1._ |
 | virtual [**ItemStack**](classendstone_1_1ItemStack.md) | [**createItemStack**](#function-createitemstack-22) ([**int**](classendstone_1_1Identifier.md) amount) const = 0<br>_Constructs a new_ [_**ItemStack**_](classendstone_1_1ItemStack.md) _with this item type._ |
-| virtual [**ItemTypeId**](namespaceendstone.md#typedef-itemtypeid) | [**getId**](#function-getid) () const = 0<br>_Return the identifier of this item type._  |
 | virtual [**int**](classendstone_1_1Identifier.md) | [**getMaxDurability**](#function-getmaxdurability) () const = 0<br>_Gets the maximum durability of this item type._  |
 | virtual [**int**](classendstone_1_1Identifier.md) | [**getMaxStackSize**](#function-getmaxstacksize) () const = 0<br>_Gets the maximum amount of this item type that can be held in a stack._  |
-| virtual std::string | [**getTranslationKey**](#function-gettranslationkey-12) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
+| virtual std::string | [**getTranslationKey**](#function-gettranslationkey-12) () override const = 0<br>_Get the translation key, suitable for use in a translation component._  |
 | virtual std::string | [**getTranslationKey**](#function-gettranslationkey-22) ([**int**](classendstone_1_1Identifier.md) data) const = 0<br>_Get the translation key, suitable for use in a translation component._  |
-|   | [**operator ItemTypeId**](#function-operator-itemtypeid) () const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator) ([**const**](classendstone_1_1Identifier.md) [**ItemTypeId**](namespaceendstone.md#typedef-itemtypeid) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**ItemType**](classendstone_1_1ItemType.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**ItemTypeId**](namespaceendstone.md#typedef-itemtypeid) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**ItemType**](classendstone_1_1ItemType.md) & other) const<br> |
-| virtual  | [**~ItemType**](#function-itemtype) () = default<br> |
+
+
+## Public Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| virtual [**Id**](classendstone_1_1Identifier.md) | [**getId**](classendstone_1_1Registry_1_1Type.md#function-getid) () const = 0<br>_Return the identifier of this object._  |
+| virtual std::string | [**getTranslationKey**](classendstone_1_1Registry_1_1Type.md#function-gettranslationkey) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
+|   | [**operator Id**](classendstone_1_1Registry_1_1Type.md#function-operator-id) () const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+| virtual  | [**~Type**](classendstone_1_1Registry_1_1Type.md#function-type) () = default<br> |
+
+
+
+
+## Public Static Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+|  [**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) \* | [**get**](classendstone_1_1Registry_1_1Type.md#function-get) ([**Id**](classendstone_1_1Identifier.md) id) <br>_Look up a registry entry by identifier._  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -176,31 +246,6 @@ An [**ItemStack**](classendstone_1_1ItemStack.md) of this item type
 
 
 
-### function getId 
-
-_Return the identifier of this item type._ 
-```C++
-virtual ItemTypeId endstone::ItemType::getId () const = 0
-```
-
-
-
-
-
-**Returns:**
-
-this item's identifier 
-
-
-
-
-
-        
-
-<hr>
-
-
-
 ### function getMaxDurability 
 
 _Gets the maximum durability of this item type._ 
@@ -255,7 +300,7 @@ Maximum stack size for this item type
 
 _Get the translation key, suitable for use in a translation component._ 
 ```C++
-virtual std::string endstone::ItemType::getTranslationKey () const = 0
+virtual std::string endstone::ItemType::getTranslationKey () override const = 0
 ```
 
 
@@ -271,6 +316,8 @@ the translation key
 
 
         
+Implements [*endstone::Registry::Type::getTranslationKey*](classendstone_1_1Registry_1_1Type.md#function-gettranslationkey)
+
 
 <hr>
 
@@ -305,92 +352,6 @@ the translation key
 
 
         
-
-<hr>
-
-
-
-### function operator ItemTypeId 
-
-```C++
-inline endstone::ItemType::operator ItemTypeId () const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::ItemType::operator!= (
-    const  ItemTypeId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::ItemType::operator!= (
-    const  ItemType & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::ItemType::operator== (
-    const  ItemTypeId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::ItemType::operator== (
-    const  ItemType & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function ~ItemType 
-
-```C++
-virtual endstone::ItemType::~ItemType () = default
-```
-
-
-
 
 <hr>
 

@@ -29,6 +29,11 @@ Inherits the following classes: [endstone::IRegistry](classendstone_1_1IRegistry
 
 
 
+## Classes
+
+| Type | Name |
+| ---: | :--- |
+| class | [**Type**](classendstone_1_1Registry_1_1Type.md) <br>_CRTP base for registry-backed types identified by an_ [_**Identifier**_](classendstone_1_1Identifier.md) _._ |
 
 
 

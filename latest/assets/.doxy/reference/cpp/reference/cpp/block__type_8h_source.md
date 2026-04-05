@@ -25,11 +25,8 @@
 #pragma once
 
 #include <memory>
-#include <string>
 
-#include "endstone/detail.h"
 #include "endstone/registry.h"
-#include "endstone/server.h"
 
 namespace endstone {
 
@@ -37,39 +34,18 @@ class BlockData;
 
 class BlockType;
 using BlockTypeId = Identifier<BlockType>;
-class BlockType {
+class BlockType : public Registry<BlockType>::Type {
 public:
     static constexpr auto Air = BlockTypeId::minecraft("air");
 
     ENDSTONE_REGISTRY_TYPE(BlockType)
-    virtual ~BlockType() = default;
 
-    [[nodiscard]] virtual BlockTypeId getId() const = 0;
-
-    [[nodiscard]] virtual std::string getTranslationKey() const = 0;
-
+    
     [[nodiscard]] virtual bool hasItemType() const = 0;
 
     [[nodiscard]] virtual std::unique_ptr<BlockData> createBlockData() const = 0;
-
-    bool operator==(const BlockTypeId &other) const { return getId() == other; }
-    bool operator!=(const BlockTypeId &other) const { return !(*this == other); }
-    bool operator==(const BlockType &other) const { return getId() == other.getId(); }
-    bool operator!=(const BlockType &other) const { return !(*this == other); }
-    operator BlockTypeId() const { return getId(); }
 };
 }  // namespace endstone
-
-template <>
-struct fmt::formatter<endstone::BlockType> : formatter<string_view> {
-    using Type = endstone::BlockType;
-
-    template <typename FormatContext>
-    auto format(const Type &val, FormatContext &ctx) const -> format_context::iterator
-    {
-        return fmt::format_to(ctx.out(), "{}", val.getId());
-    }
-};
 ```
 
 

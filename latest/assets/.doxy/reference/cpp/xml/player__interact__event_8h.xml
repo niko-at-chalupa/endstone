@@ -185,12 +185,12 @@
         <childnode refid="23" relation="include">
         </childnode>
       </node>
-      <node id="79">
-        <label>endstone/detail.h</label>
+      <node id="80">
+        <label>detail.h</label>
         <link refid="detail_8h_source"/>
         <childnode refid="9" relation="include">
         </childnode>
-        <childnode refid="80" relation="include">
+        <childnode refid="81" relation="include">
         </childnode>
         <childnode refid="63" relation="include">
         </childnode>
@@ -199,12 +199,6 @@
         <label>endstone/enchantments/enchantment.h</label>
         <link refid="enchantment_8h_source"/>
         <childnode refid="79" relation="include">
-        </childnode>
-        <childnode refid="82" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
-        </childnode>
-        <childnode refid="83" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -486,13 +480,7 @@
       <node id="78">
         <label>endstone/inventory/item_type.h</label>
         <link refid="item__type_8h_source"/>
-        <childnode refid="10" relation="include">
-        </childnode>
         <childnode refid="79" relation="include">
-        </childnode>
-        <childnode refid="81" relation="include">
-        </childnode>
-        <childnode refid="83" relation="include">
         </childnode>
       </node>
       <node id="104">
@@ -740,7 +728,7 @@
         </childnode>
         <childnode refid="92" relation="include">
         </childnode>
-        <childnode refid="79" relation="include">
+        <childnode refid="80" relation="include">
         </childnode>
         <childnode refid="109" relation="include">
         </childnode>
@@ -879,16 +867,24 @@
         <label>endstone/plugin/service_priority.h</label>
         <link refid="service__priority_8h_source"/>
       </node>
-      <node id="81">
+      <node id="79">
         <label>endstone/registry.h</label>
         <link refid="registry_8h_source"/>
+        <childnode refid="38" relation="include">
+        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
         <childnode refid="20" relation="include">
         </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
         <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
         </childnode>
       </node>
       <node id="68">
@@ -968,7 +964,7 @@
         </childnode>
       </node>
       <node id="83">
-        <label>endstone/server.h</label>
+        <label>server.h</label>
         <link refid="server_8h_source"/>
         <childnode refid="12" relation="include">
         </childnode>
@@ -1137,7 +1133,7 @@
       <node id="64">
         <label>cstring</label>
       </node>
-      <node id="80">
+      <node id="81">
         <label>dlfcn.h</label>
       </node>
       <node id="20">

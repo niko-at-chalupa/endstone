@@ -10,10 +10,14 @@
 
 
 
+* `#include <concepts>`
 * `#include <functional>`
 * `#include <stdexcept>`
+* `#include <string>`
 * `#include <fmt/format.h>`
+* `#include "detail.h"`
 * `#include "identifier.h"`
+* `#include "server.h"`
 
 
 
@@ -40,6 +44,8 @@
 | ---: | :--- |
 | class | [**IRegistry**](classendstone_1_1IRegistry.md) <br> |
 | class | [**Registry**](classendstone_1_1Registry.md) &lt;[**typename**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md)&gt;<br>_Abstract registry interface for objects with identifiers._  |
+| class | [**Type**](classendstone_1_1Registry_1_1Type.md) <br>_CRTP base for registry-backed types identified by an_ [_**Identifier**_](classendstone_1_1Identifier.md) _._ |
+| struct | [**formatter&lt; T &gt;**](structfmt_1_1formatter_3_01T_01_4.md) &lt;typename T&gt;<br> |
 
 
 
@@ -93,7 +99,7 @@
 
 | Type | Name |
 | ---: | :--- |
-| define  | [**ENDSTONE\_REGISTRY\_TYPE**](registry_8h.md#define-endstone_registry_type) (type) `/* multi line expression */`<br> |
+| define  | [**ENDSTONE\_REGISTRY\_TYPE**](registry_8h.md#define-endstone_registry_type) (type) `static constexpr auto RegistryType = #type;`<br> |
 
 ## Macro Definition Documentation
 
@@ -106,7 +112,7 @@
 ```C++
 #define ENDSTONE_REGISTRY_TYPE (
     type
-) `/* multi line expression */`
+) `static constexpr auto RegistryType = #type;`
 ```
 
 

@@ -149,6 +149,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**Preconditions**](classendstone_1_1Preconditions.md)     
     * **class** [**Recipe**](classendstone_1_1Recipe.md) _Represents some type of crafting recipe._     
     * **class** [**Registry**](classendstone_1_1Registry.md) _Abstract registry interface for objects with identifiers._     
+        * **class** [**Type**](classendstone_1_1Registry_1_1Type.md) _CRTP base for registry-backed types identified by an_ [_**Identifier**_](classendstone_1_1Identifier.md) _._    
     * **class** [**Scheduler**](classendstone_1_1Scheduler.md) _Represents a scheduler that executes various tasks._     
     * **class** [**Score**](classendstone_1_1Score.md) _Represents a score for an objective on a scoreboard._     
     * **class** [**Scoreboard**](classendstone_1_1Scoreboard.md) _Represents a scoreboard._     
@@ -189,6 +190,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
 * **struct** [**PluginDescriptionBuilder**](structendstone_1_1detail_1_1PluginDescriptionBuilder.md)     
 * **struct** [**escape\_view**](structendstone_1_1nbt_1_1escape__view.md)     
 * **namespace** [**fmt**](namespacefmt.md)     
+    * **struct** [**formatter&lt; T &gt;**](structfmt_1_1formatter_3_01T_01_4.md)     
     * **struct** [**formatter&lt; endstone::Actor &gt;**](structfmt_1_1formatter_3_01endstone_1_1Actor_01_4.md)     
     * **struct** [**formatter&lt; endstone::Block &gt;**](structfmt_1_1formatter_3_01endstone_1_1Block_01_4.md)     
     * **struct** [**formatter&lt; endstone::BlockData &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockData_01_4.md)     
@@ -196,7 +198,6 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **struct** [**formatter&lt; endstone::BlockStates &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_01_4.md)     
     * **struct** [**formatter&lt; endstone::BlockStates::mapped\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1mapped__type_01_4.md)     
     * **struct** [**formatter&lt; endstone::BlockStates::value\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4.md)     
-    * **struct** [**formatter&lt; endstone::BlockType &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4.md)     
     * **struct** [**formatter&lt; endstone::ByteArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::ByteTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::Chunk &gt;**](structfmt_1_1formatter_3_01endstone_1_1Chunk_01_4.md)     
@@ -210,7 +211,6 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **struct** [**formatter&lt; endstone::IntArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1IntArrayTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::IntTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1IntTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::ItemStack &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemStack_01_4.md)     
-    * **struct** [**formatter&lt; endstone::ItemType &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4.md)     
     * **struct** [**formatter&lt; endstone::ListTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ListTag_01_4.md)     
     * **struct** [**formatter&lt; endstone::Location &gt;**](structfmt_1_1formatter_3_01endstone_1_1Location_01_4.md)     
     * **struct** [**formatter&lt; endstone::LongTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1LongTag_01_4.md)     

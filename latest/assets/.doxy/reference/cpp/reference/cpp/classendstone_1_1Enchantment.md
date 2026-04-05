@@ -13,6 +13,7 @@
 
 
 
+Inherits the following classes: [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
 
 
 
@@ -23,6 +24,19 @@
 
 
 
+
+
+
+
+
+
+## Public Types inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; | [**Id**](classendstone_1_1Registry_1_1Type.md#typedef-id)  <br> |
 
 
 
@@ -93,22 +107,77 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Public Functions
 
 | Type | Name |
 | ---: | :--- |
 | virtual [**bool**](classendstone_1_1Identifier.md) | [**canEnchantItem**](#function-canenchantitem) ([**const**](classendstone_1_1Identifier.md) [**ItemStack**](classendstone_1_1ItemStack.md) & item) const = 0<br>_Checks if this_ [_**Enchantment**_](classendstone_1_1Enchantment.md) _may be applied to the given_[_**ItemStack**_](classendstone_1_1ItemStack.md) _._ |
 | virtual [**bool**](classendstone_1_1Identifier.md) | [**conflictsWith**](#function-conflictswith) ([**const**](classendstone_1_1Identifier.md) [**Enchantment**](classendstone_1_1Enchantment.md) & other) const = 0<br>_Check if this enchantment conflicts with another enchantment._  |
-| virtual [**EnchantmentId**](classendstone_1_1Identifier.md) | [**getId**](#function-getid) () const = 0<br>_Return the identifier for this enchantment._  |
 | virtual [**int**](classendstone_1_1Identifier.md) | [**getMaxLevel**](#function-getmaxlevel) () const = 0<br>_Gets the maximum level that this_ [_**Enchantment**_](classendstone_1_1Enchantment.md) _may become._ |
 | virtual [**int**](classendstone_1_1Identifier.md) | [**getStartLevel**](#function-getstartlevel) () const = 0<br>_Gets the level that this_ [_**Enchantment**_](classendstone_1_1Enchantment.md) _should start at (also known as minimum level)._ |
-| virtual std::string | [**getTranslationKey**](#function-gettranslationkey) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
-|   | [**operator EnchantmentId**](#function-operator-enchantmentid) () const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator) ([**const**](classendstone_1_1Identifier.md) [**EnchantmentId**](classendstone_1_1Identifier.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**Enchantment**](classendstone_1_1Enchantment.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**EnchantmentId**](classendstone_1_1Identifier.md) & other) const<br> |
-|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**Enchantment**](classendstone_1_1Enchantment.md) & other) const<br> |
-| virtual  | [**~Enchantment**](#function-enchantment) () = default<br> |
+
+
+## Public Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+| virtual [**Id**](classendstone_1_1Identifier.md) | [**getId**](classendstone_1_1Registry_1_1Type.md#function-getid) () const = 0<br>_Return the identifier of this object._  |
+| virtual std::string | [**getTranslationKey**](classendstone_1_1Registry_1_1Type.md#function-gettranslationkey) () const = 0<br>_Get the translation key, suitable for use in a translation component._  |
+|   | [**operator Id**](classendstone_1_1Registry_1_1Type.md#function-operator-id) () const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator!=**](classendstone_1_1Registry_1_1Type.md#function-operator_1) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_2) ([**const**](classendstone_1_1Identifier.md) [**Id**](classendstone_1_1Identifier.md) & other) const<br> |
+|  [**bool**](classendstone_1_1Identifier.md) | [**operator==**](classendstone_1_1Registry_1_1Type.md#function-operator_3) ([**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & other) const<br> |
+| virtual  | [**~Type**](classendstone_1_1Registry_1_1Type.md#function-type) () = default<br> |
+
+
+
+
+## Public Static Functions inherited from endstone::Registry::Type
+
+See [endstone::Registry::Type](classendstone_1_1Registry_1_1Type.md)
+
+| Type | Name |
+| ---: | :--- |
+|  [**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) \* | [**get**](classendstone_1_1Registry_1_1Type.md#function-get) ([**Id**](classendstone_1_1Identifier.md) id) <br>_Look up a registry entry by identifier._  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -803,31 +872,6 @@ True if there is a conflict.
 
 
 
-### function getId 
-
-_Return the identifier for this enchantment._ 
-```C++
-virtual EnchantmentId endstone::Enchantment::getId () const = 0
-```
-
-
-
-
-
-**Returns:**
-
-this enchantment's id 
-
-
-
-
-
-        
-
-<hr>
-
-
-
 ### function getMaxLevel 
 
 _Gets the maximum level that this_ [_**Enchantment**_](classendstone_1_1Enchantment.md) _may become._
@@ -873,117 +917,6 @@ Starting level of the [**Enchantment**](classendstone_1_1Enchantment.md)
 
 
         
-
-<hr>
-
-
-
-### function getTranslationKey 
-
-_Get the translation key, suitable for use in a translation component._ 
-```C++
-virtual std::string endstone::Enchantment::getTranslationKey () const = 0
-```
-
-
-
-
-
-**Returns:**
-
-the translation key 
-
-
-
-
-
-        
-
-<hr>
-
-
-
-### function operator EnchantmentId 
-
-```C++
-inline endstone::Enchantment::operator EnchantmentId () const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::Enchantment::operator!= (
-    const  EnchantmentId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator!= 
-
-```C++
-inline bool endstone::Enchantment::operator!= (
-    const  Enchantment & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::Enchantment::operator== (
-    const  EnchantmentId & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function operator== 
-
-```C++
-inline bool endstone::Enchantment::operator== (
-    const  Enchantment & other
-) const
-```
-
-
-
-
-<hr>
-
-
-
-### function ~Enchantment 
-
-```C++
-virtual endstone::Enchantment::~Enchantment () = default
-```
-
-
-
 
 <hr>
 

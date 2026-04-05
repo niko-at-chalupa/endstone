@@ -10,10 +10,7 @@
 
 
 
-* `#include <string>`
-* `#include "endstone/detail.h"`
 * `#include "endstone/registry.h"`
-* `#include "endstone/server.h"`
 
 
 
@@ -39,7 +36,6 @@
 | Type | Name |
 | ---: | :--- |
 | class | [**ItemType**](classendstone_1_1ItemType.md) <br> |
-| struct | [**formatter&lt; endstone::ItemType &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4.md) &lt;&gt;<br> |
 
 
 

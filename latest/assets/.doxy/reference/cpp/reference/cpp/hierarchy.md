@@ -64,7 +64,10 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**endstone::Block**](classendstone_1_1Block.md) _Represents a block._ 
 * **class** [**endstone::BlockData**](classendstone_1_1BlockData.md) _Represents the data related to a live block._ 
 * **class** [**endstone::BlockState**](classendstone_1_1BlockState.md) _Represents a captured state of a block, which will not update automatically._ 
-* **class** [**endstone::BlockType**](classendstone_1_1BlockType.md) 
+* **class** [**endstone::Registry::Type**](classendstone_1_1Registry_1_1Type.md) _CRTP base for registry-backed types identified by an_ [_**Identifier**_](classendstone_1_1Identifier.md) _._    
+    * **class** [**endstone::BlockType**](classendstone_1_1BlockType.md) 
+    * **class** [**endstone::Enchantment**](classendstone_1_1Enchantment.md) 
+    * **class** [**endstone::ItemType**](classendstone_1_1ItemType.md) 
 * **class** [**endstone::BossBar**](classendstone_1_1BossBar.md) _Represents a boss bar that is displayed to players._ 
 * **class** [**endstone::Button**](classendstone_1_1Button.md) _Represents a button with text and an optional icon._ 
 * **class** [**endstone::Chunk**](classendstone_1_1Chunk.md) _Represents a chunk of blocks._ 
@@ -87,7 +90,6 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** [**endstone::Dropdown**](classendstone_1_1Dropdown.md) _Represents a dropdown with a set of predefined options._     
     * **class** [**endstone::StepSlider**](classendstone_1_1StepSlider.md) _Represents a step slider with a set of predefined options._ 
 * **class** [**endstone::EffectType**](classendstone_1_1EffectType.md) _All effect types._ 
-* **class** [**endstone::Enchantment**](classendstone_1_1Enchantment.md) 
 * **class** [**endstone::EventHandler**](classendstone_1_1EventHandler.md) _Represents a registered_ [_**EventHandler**_](classendstone_1_1EventHandler.md) _which associates with a_[_**Plugin**_](classendstone_1_1Plugin.md) _._
 * **class** [**endstone::HandlerList**](classendstone_1_1HandlerList.md) _A list of event handlers. Should be instantiated on a per-event basis._ 
 * **class** [**endstone::Header**](classendstone_1_1Header.md) _Represents a header with a label._ 
@@ -99,7 +101,6 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **class** [**endstone::PlayerInventory**](classendstone_1_1PlayerInventory.md) _Interface to the inventory of a_ [_**Player**_](classendstone_1_1Player.md) _, including the four armor slots and any extra slots._
 * **class** [**endstone::ItemFactory**](classendstone_1_1ItemFactory.md) 
 * **class** [**endstone::ItemStack**](classendstone_1_1ItemStack.md) _Represents a stack of items._ 
-* **class** [**endstone::ItemType**](classendstone_1_1ItemType.md) 
 * **class** [**endstone::Label**](classendstone_1_1Label.md) _Represents a text label._ 
 * **class** [**endstone::Language**](classendstone_1_1Language.md) _Represents the interface for translating text into different languages._ 
 * **class** [**endstone::Level**](classendstone_1_1Level.md) _Represents a level, which may contain actors, chunks and blocks._ 
@@ -277,6 +278,7 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
 * **class** **endstone::Func**    
     * **struct** [**endstone::overloaded**](structendstone_1_1overloaded.md) _Helper type for visitors._ 
 * **class** **formatter< string_view >**    
+    * **struct** [**fmt::formatter&lt; T &gt;**](structfmt_1_1formatter_3_01T_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::Actor &gt;**](structfmt_1_1formatter_3_01endstone_1_1Actor_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::Block &gt;**](structfmt_1_1formatter_3_01endstone_1_1Block_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::BlockData &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockData_01_4.md) 
@@ -284,7 +286,6 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **struct** [**fmt::formatter&lt; endstone::BlockStates &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::BlockStates::mapped\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1mapped__type_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::BlockStates::value\_type &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4.md) 
-    * **struct** [**fmt::formatter&lt; endstone::BlockType &gt;**](structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ByteArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ByteTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::Chunk &gt;**](structfmt_1_1formatter_3_01endstone_1_1Chunk_01_4.md) 
@@ -298,7 +299,6 @@ This inheritance list is sorted roughly, but not completely, alphabetically:
     * **struct** [**fmt::formatter&lt; endstone::IntArrayTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1IntArrayTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::IntTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1IntTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ItemStack &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemStack_01_4.md) 
-    * **struct** [**fmt::formatter&lt; endstone::ItemType &gt;**](structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::ListTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1ListTag_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::Location &gt;**](structfmt_1_1formatter_3_01endstone_1_1Location_01_4.md) 
     * **struct** [**fmt::formatter&lt; endstone::LongTag &gt;**](structfmt_1_1formatter_3_01endstone_1_1LongTag_01_4.md) 

@@ -24,15 +24,12 @@
 
 #pragma once
 
-#include "endstone/detail.h"
-#include "endstone/identifier.h"
 #include "endstone/registry.h"
-#include "endstone/server.h"
 
 namespace endstone {
 class ItemStack;
 using EnchantmentId = Identifier<class Enchantment>;
-class Enchantment {
+class Enchantment : public Registry<Enchantment>::Type {
 public:
     ENDSTONE_REGISTRY_TYPE(Enchantment)
     static constexpr auto Protection = EnchantmentId::minecraft("protection");
@@ -119,12 +116,6 @@ public:
 
     static constexpr auto Lunge = EnchantmentId::minecraft("lunge");
 
-    virtual ~Enchantment() = default;
-
-    [[nodiscard]] virtual EnchantmentId getId() const = 0;
-
-    [[nodiscard]] virtual std::string getTranslationKey() const = 0;
-
     [[nodiscard]] virtual int getMaxLevel() const = 0;
 
     [[nodiscard]] virtual int getStartLevel() const = 0;
@@ -132,16 +123,6 @@ public:
     [[nodiscard]] virtual bool conflictsWith(const Enchantment &other) const = 0;
 
     [[nodiscard]] virtual bool canEnchantItem(const ItemStack &item) const = 0;
-
-    bool operator==(const EnchantmentId &other) const { return getId() == other; }
-
-    bool operator!=(const EnchantmentId &other) const { return !(*this == other); }
-
-    bool operator==(const Enchantment &other) const { return getId() == other.getId(); }
-
-    bool operator!=(const Enchantment &other) const { return !(*this == other); }
-
-    operator EnchantmentId() const { return getId(); }
 };
 }  // namespace endstone
 ```

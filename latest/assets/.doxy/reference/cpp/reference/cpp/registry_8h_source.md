@@ -24,12 +24,16 @@
 
 #pragma once
 
+#include <concepts>
 #include <functional>
 #include <stdexcept>
+#include <string>
 
 #include <fmt/format.h>
 
+#include "detail.h"
 #include "identifier.h"
+#include "server.h"
 
 namespace endstone {
 class IRegistry {
@@ -40,6 +44,28 @@ public:
 template <typename T>
 class Registry : public IRegistry {
 public:
+    class Type {
+    public:
+        using Id = Identifier<T>;
+
+        virtual ~Type() = default;
+
+        [[nodiscard]] virtual Id getId() const = 0;
+
+        [[nodiscard]] virtual std::string getTranslationKey() const = 0;
+
+        static const T *get(Id id)
+        {
+            return detail::getServer().getRegistry<T>().get(id);
+        }
+
+        bool operator==(const Id &other) const { return getId() == other; }
+        bool operator!=(const Id &other) const { return !(*this == other); }
+        bool operator==(const T &other) const { return getId() == other.getId(); }
+        bool operator!=(const T &other) const { return !(*this == other); }
+        operator Id() const { return getId(); }
+    };
+
     virtual T *get(Identifier<T> id) noexcept = 0;
 
     virtual const T *get(Identifier<T> id) const noexcept = 0;
@@ -62,15 +88,20 @@ public:
 
     virtual void forEach(std::function<bool(const T &)> func) const = 0;
 };
+
+#define ENDSTONE_REGISTRY_TYPE(type) static constexpr auto RegistryType = #type;
+
 }  // namespace endstone
 
-#define ENDSTONE_REGISTRY_TYPE(type)                            \
-    static constexpr auto RegistryType = #type;                 \
-                                                                \
-    static const type *get(Identifier<type> id)                 \
-    {                                                           \
-        return detail::getServer().getRegistry<type>().get(id); \
+template <typename T>
+    requires requires(const T &t) { { t.getId() } -> std::convertible_to<endstone::Identifier<T>>; }
+struct fmt::formatter<T> : formatter<string_view> {
+    template <typename FormatContext>
+    auto format(const T &val, FormatContext &ctx) const -> format_context::iterator
+    {
+        return fmt::format_to(ctx.out(), "{}", val.getId());
     }
+};
 ```
 
 

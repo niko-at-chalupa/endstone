@@ -24,25 +24,19 @@
 
 #pragma once
 
-#include <string>
-
-#include "endstone/detail.h"
 #include "endstone/registry.h"
-#include "endstone/server.h"
 
 namespace endstone {
 class ItemStack;
 using ItemTypeId = Identifier<ItemType>;
-class ItemType {
+class ItemType : public Registry<ItemType>::Type {
 public:
     static constexpr auto Air = ItemTypeId::minecraft("air");
 
     ENDSTONE_REGISTRY_TYPE(ItemType)
-    virtual ~ItemType() = default;
 
-    [[nodiscard]] virtual ItemTypeId getId() const = 0;
-
-    [[nodiscard]] virtual std::string getTranslationKey() const = 0;
+    
+    [[nodiscard]] std::string getTranslationKey() const override = 0;
 
     [[nodiscard]] virtual std::string getTranslationKey(int data) const = 0;
 
@@ -53,29 +47,8 @@ public:
     [[nodiscard]] virtual ItemStack createItemStack() const = 0;
 
     [[nodiscard]] virtual ItemStack createItemStack(int amount) const = 0;
-
-    bool operator==(const ItemTypeId &other) const { return getId() == other; }
-
-    bool operator!=(const ItemTypeId &other) const { return !(*this == other); }
-
-    bool operator==(const ItemType &other) const { return getId() == other.getId(); }
-
-    bool operator!=(const ItemType &other) const { return !(*this == other); }
-
-    operator ItemTypeId() const { return getId(); }
 };
 }  // namespace endstone
-
-template <>
-struct fmt::formatter<endstone::ItemType> : formatter<string_view> {
-    using Type = endstone::ItemType;
-
-    template <typename FormatContext>
-    auto format(const Type &val, FormatContext &ctx) const -> format_context::iterator
-    {
-        return fmt::format_to(ctx.out(), "{}", val.getId());
-    }
-};  // namespace fmt
 ```
 
 

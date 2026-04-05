@@ -9,7 +9,6 @@
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_01_4" prot="public">fmt::formatter&lt; endstone::BlockStates &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1mapped__type_01_4" prot="public">fmt::formatter&lt; endstone::BlockStates::mapped_type &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4" prot="public">fmt::formatter&lt; endstone::BlockStates::value_type &gt;</innerclass>
-    <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4" prot="public">fmt::formatter&lt; endstone::BlockType &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ByteArrayTag_01_4" prot="public">fmt::formatter&lt; endstone::ByteArrayTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ByteTag_01_4" prot="public">fmt::formatter&lt; endstone::ByteTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1Chunk_01_4" prot="public">fmt::formatter&lt; endstone::Chunk &gt;</innerclass>
@@ -23,7 +22,6 @@
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1IntArrayTag_01_4" prot="public">fmt::formatter&lt; endstone::IntArrayTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1IntTag_01_4" prot="public">fmt::formatter&lt; endstone::IntTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ItemStack_01_4" prot="public">fmt::formatter&lt; endstone::ItemStack &gt;</innerclass>
-    <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4" prot="public">fmt::formatter&lt; endstone::ItemType &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ListTag_01_4" prot="public">fmt::formatter&lt; endstone::ListTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1Location_01_4" prot="public">fmt::formatter&lt; endstone::Location &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1LongTag_01_4" prot="public">fmt::formatter&lt; endstone::LongTag &gt;</innerclass>
@@ -32,6 +30,7 @@
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1ShortTag_01_4" prot="public">fmt::formatter&lt; endstone::ShortTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1StringTag_01_4" prot="public">fmt::formatter&lt; endstone::StringTag &gt;</innerclass>
     <innerclass refid="structfmt_1_1formatter_3_01endstone_1_1Vector_01_4" prot="public">fmt::formatter&lt; endstone::Vector &gt;</innerclass>
+    <innerclass refid="structfmt_1_1formatter_3_01T_01_4" prot="public">fmt::formatter&lt; T &gt;</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

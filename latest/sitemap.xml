@@ -737,6 +737,10 @@
          <lastmod>2026-04-05</lastmod>
     </url>
     <url>
+         <loc>https://endstone.dev/latest/reference/cpp/classendstone_1_1Registry_1_1Type/</loc>
+         <lastmod>2026-04-05</lastmod>
+    </url>
+    <url>
          <loc>https://endstone.dev/latest/reference/cpp/classendstone_1_1Scheduler/</loc>
          <lastmod>2026-04-05</lastmod>
     </url>
@@ -897,6 +901,10 @@
          <lastmod>2026-04-05</lastmod>
     </url>
     <url>
+         <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01T_01_4/</loc>
+         <lastmod>2026-04-05</lastmod>
+    </url>
+    <url>
          <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01endstone_1_1Actor_01_4/</loc>
          <lastmod>2026-04-05</lastmod>
     </url>
@@ -922,10 +930,6 @@
     </url>
     <url>
          <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01endstone_1_1BlockStates_1_1value__type_01_4/</loc>
-         <lastmod>2026-04-05</lastmod>
-    </url>
-    <url>
-         <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01endstone_1_1BlockType_01_4/</loc>
          <lastmod>2026-04-05</lastmod>
     </url>
     <url>
@@ -978,10 +982,6 @@
     </url>
     <url>
          <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01endstone_1_1ItemStack_01_4/</loc>
-         <lastmod>2026-04-05</lastmod>
-    </url>
-    <url>
-         <loc>https://endstone.dev/latest/reference/cpp/structfmt_1_1formatter_3_01endstone_1_1ItemType_01_4/</loc>
          <lastmod>2026-04-05</lastmod>
     </url>
     <url>

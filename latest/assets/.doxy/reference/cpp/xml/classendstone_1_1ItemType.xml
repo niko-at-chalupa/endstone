@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classendstone_1_1ItemType" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>endstone::ItemType</compoundname>
+    <basecompoundref refid="classendstone_1_1Registry_1_1Type" prot="public" virt="non-virtual">endstone::Registry&lt; T &gt;::Type</basecompoundref>
     <sectiondef kind="public-static-attrib">
       <memberdef kind="variable" id="classendstone_1_1ItemType_1aee73c12bf0391b460432889b55496e59" prot="public" static="yes" constexpr="yes" mutable="no">
         <type><ref refid="classendstone_1_1Identifier" kindref="compound">constexpr</ref> <ref refid="classendstone_1_1Identifier" kindref="compound">auto</ref></type>
@@ -16,48 +17,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="31" column="27" bodyfile="include/endstone/inventory/item_type.h" bodystart="31" bodyend="-1"/>
+        <location file="include/endstone/inventory/item_type.h" line="27" column="27" bodyfile="include/endstone/inventory/item_type.h" bodystart="27" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
-      <memberdef kind="function" id="classendstone_1_1ItemType_1a0d214cfa5e07bd5310b1ad134f873bc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
-        <type></type>
-        <definition>virtual endstone::ItemType::~ItemType</definition>
-        <argsstring>()=default</argsstring>
-        <name>~ItemType</name>
-        <qualifiedname>endstone::ItemType::~ItemType</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="34" column="13"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1aa0b17f850e6ca640667a0a844539d494" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
-        <type><ref refid="namespaceendstone_1a38ff2441d6476b407a46c5868fd25cd3" kindref="member">ItemTypeId</ref></type>
-        <definition>virtual ItemTypeId endstone::ItemType::getId</definition>
-        <argsstring>() const =0</argsstring>
-        <name>getId</name>
-        <qualifiedname>endstone::ItemType::getId</qualifiedname>
-        <briefdescription>
-<para>Return the identifier of this item type. </para>
-        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>this item&apos;s identifier </para>
-</simplesect>
-</para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="41" column="25"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1a2e673b2a8d514e0d5697d5c15bee9e3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classendstone_1_1ItemType_1a1218189315a2083b2d08228fff42fa71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>std::string</type>
-        <definition>virtual std::string endstone::ItemType::getTranslationKey</definition>
-        <argsstring>() const =0</argsstring>
+        <definition>std::string endstone::ItemType::getTranslationKey</definition>
+        <argsstring>() const override=0</argsstring>
         <name>getTranslationKey</name>
         <qualifiedname>endstone::ItemType::getTranslationKey</qualifiedname>
+        <reimplements refid="classendstone_1_1Registry_1_1Type_1a3d82ceca29e75e71a8ad56c5d0f12aa7">getTranslationKey</reimplements>
         <briefdescription>
 <para>Get the translation key, suitable for use in a translation component. </para>
         </briefdescription>
@@ -68,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="48" column="26"/>
+        <location file="include/endstone/inventory/item_type.h" line="36" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classendstone_1_1ItemType_1a56354993700b0b0b130b2c891400c264" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>std::string</type>
@@ -99,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="57" column="26"/>
+        <location file="include/endstone/inventory/item_type.h" line="45" column="26"/>
       </memberdef>
       <memberdef kind="function" id="classendstone_1_1ItemType_1a0ed5eae24345de2c756b00eb6da0cdb9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classendstone_1_1Identifier" kindref="compound">int</ref></type>
@@ -117,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="64" column="18"/>
+        <location file="include/endstone/inventory/item_type.h" line="52" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classendstone_1_1ItemType_1ad6e45d72ee92f575f9913674f3beacd9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classendstone_1_1Identifier" kindref="compound">int</ref></type>
@@ -135,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="71" column="18"/>
+        <location file="include/endstone/inventory/item_type.h" line="59" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classendstone_1_1ItemType_1afc38f163e45fb047c3f66d93131838eb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classendstone_1_1ItemStack" kindref="compound">ItemStack</ref></type>
@@ -153,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="78" column="24"/>
+        <location file="include/endstone/inventory/item_type.h" line="66" column="24"/>
       </memberdef>
       <memberdef kind="function" id="classendstone_1_1ItemType_1ae41d77467211c50202ccfc4b01e2a633" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classendstone_1_1ItemStack" kindref="compound">ItemStack</ref></type>
@@ -184,115 +154,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="86" column="24"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1aa393a6ea6060af52befb825be7a883f2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classendstone_1_1Identifier" kindref="compound">bool</ref></type>
-        <definition>bool endstone::ItemType::operator==</definition>
-        <argsstring>(const ItemTypeId &amp;other) const</argsstring>
-        <name>operator==</name>
-        <qualifiedname>endstone::ItemType::operator==</qualifiedname>
-        <param>
-          <type><ref refid="classendstone_1_1Identifier" kindref="compound">const</ref> <ref refid="namespaceendstone_1a38ff2441d6476b407a46c5868fd25cd3" kindref="member">ItemTypeId</ref> &amp;</type>
-          <declname>other</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="88" column="10" bodyfile="include/endstone/inventory/item_type.h" bodystart="88" bodyend="88"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1a49842a784c26b432168a9e431c73475b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classendstone_1_1Identifier" kindref="compound">bool</ref></type>
-        <definition>bool endstone::ItemType::operator!=</definition>
-        <argsstring>(const ItemTypeId &amp;other) const</argsstring>
-        <name>operator!=</name>
-        <qualifiedname>endstone::ItemType::operator!=</qualifiedname>
-        <param>
-          <type><ref refid="classendstone_1_1Identifier" kindref="compound">const</ref> <ref refid="namespaceendstone_1a38ff2441d6476b407a46c5868fd25cd3" kindref="member">ItemTypeId</ref> &amp;</type>
-          <declname>other</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="90" column="10" bodyfile="include/endstone/inventory/item_type.h" bodystart="90" bodyend="90"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1af875aee911c2b3f95b2efb7dfd2dc8fd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classendstone_1_1Identifier" kindref="compound">bool</ref></type>
-        <definition>bool endstone::ItemType::operator==</definition>
-        <argsstring>(const ItemType &amp;other) const</argsstring>
-        <name>operator==</name>
-        <qualifiedname>endstone::ItemType::operator==</qualifiedname>
-        <param>
-          <type><ref refid="classendstone_1_1Identifier" kindref="compound">const</ref> <ref refid="classendstone_1_1ItemType" kindref="compound">ItemType</ref> &amp;</type>
-          <declname>other</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="92" column="10" bodyfile="include/endstone/inventory/item_type.h" bodystart="92" bodyend="92"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1a81b1aeb108d98457a98c801207b92f21" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type><ref refid="classendstone_1_1Identifier" kindref="compound">bool</ref></type>
-        <definition>bool endstone::ItemType::operator!=</definition>
-        <argsstring>(const ItemType &amp;other) const</argsstring>
-        <name>operator!=</name>
-        <qualifiedname>endstone::ItemType::operator!=</qualifiedname>
-        <param>
-          <type><ref refid="classendstone_1_1Identifier" kindref="compound">const</ref> <ref refid="classendstone_1_1ItemType" kindref="compound">ItemType</ref> &amp;</type>
-          <declname>other</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="94" column="10" bodyfile="include/endstone/inventory/item_type.h" bodystart="94" bodyend="94"/>
-      </memberdef>
-      <memberdef kind="function" id="classendstone_1_1ItemType_1a28f9a07c91492df133d2a5e3e4ee7c0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>endstone::ItemType::operator ItemTypeId</definition>
-        <argsstring>() const</argsstring>
-        <name>operator ItemTypeId</name>
-        <qualifiedname>endstone::ItemType::operator ItemTypeId</qualifiedname>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="include/endstone/inventory/item_type.h" line="96" column="5" bodyfile="include/endstone/inventory/item_type.h" bodystart="96" bodyend="96"/>
+        <location file="include/endstone/inventory/item_type.h" line="74" column="24"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/endstone/inventory/item_type.h" line="29" column="1" bodyfile="include/endstone/inventory/item_type.h" bodystart="29" bodyend="97"/>
+    <inheritancegraph>
+      <node id="1">
+        <label>endstone::ItemType</label>
+        <link refid="classendstone_1_1ItemType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>endstone::Registry&lt; T &gt;::Type</label>
+        <link refid="classendstone_1_1Registry_1_1Type"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>endstone::ItemType</label>
+        <link refid="classendstone_1_1ItemType"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>endstone::Registry&lt; T &gt;::Type</label>
+        <link refid="classendstone_1_1Registry_1_1Type"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/endstone/inventory/item_type.h" line="25" column="1" bodyfile="include/endstone/inventory/item_type.h" bodystart="25" bodyend="75"/>
     <listofallmembers>
       <member refid="classendstone_1_1ItemType_1aee73c12bf0391b460432889b55496e59" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>Air</name></member>
       <member refid="classendstone_1_1ItemType_1afc38f163e45fb047c3f66d93131838eb" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>createItemStack</name></member>
       <member refid="classendstone_1_1ItemType_1ae41d77467211c50202ccfc4b01e2a633" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>createItemStack</name></member>
-      <member refid="classendstone_1_1ItemType_1aa0b17f850e6ca640667a0a844539d494" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getId</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1adb225834ec0af1fdd72f998cbee22946" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>get</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1ac7979c573cb4a71caf8f0d766048e95a" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getId</name></member>
       <member refid="classendstone_1_1ItemType_1ad6e45d72ee92f575f9913674f3beacd9" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getMaxDurability</name></member>
       <member refid="classendstone_1_1ItemType_1a0ed5eae24345de2c756b00eb6da0cdb9" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getMaxStackSize</name></member>
-      <member refid="classendstone_1_1ItemType_1a2e673b2a8d514e0d5697d5c15bee9e3c" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getTranslationKey</name></member>
+      <member refid="classendstone_1_1ItemType_1a1218189315a2083b2d08228fff42fa71" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getTranslationKey</name></member>
       <member refid="classendstone_1_1ItemType_1a56354993700b0b0b130b2c891400c264" prot="public" virt="pure-virtual"><scope>endstone::ItemType</scope><name>getTranslationKey</name></member>
-      <member refid="classendstone_1_1ItemType_1a28f9a07c91492df133d2a5e3e4ee7c0a" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator ItemTypeId</name></member>
-      <member refid="classendstone_1_1ItemType_1a49842a784c26b432168a9e431c73475b" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator!=</name></member>
-      <member refid="classendstone_1_1ItemType_1a81b1aeb108d98457a98c801207b92f21" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator!=</name></member>
-      <member refid="classendstone_1_1ItemType_1aa393a6ea6060af52befb825be7a883f2" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator==</name></member>
-      <member refid="classendstone_1_1ItemType_1af875aee911c2b3f95b2efb7dfd2dc8fd" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator==</name></member>
-      <member refid="classendstone_1_1ItemType_1a0d214cfa5e07bd5310b1ad134f873bc7" prot="public" virt="virtual"><scope>endstone::ItemType</scope><name>~ItemType</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1a7d2793f0ec3a8f4e7ab9b8afbd777e82" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>Id</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1ab333d4c3e969abfb5dd01c4ce34d7154" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator Id</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1a9e32d0cd444cf6e98cece1f89fd16fb4" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator!=</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1aece109daae5dede57edc8c23ef174aff" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator!=</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1ae1f1c16d4904b521e7f727ae1e9715e7" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator==</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1a0e07b4427e10e44725cefa814de62a11" prot="public" virt="non-virtual"><scope>endstone::ItemType</scope><name>operator==</name></member>
+      <member refid="classendstone_1_1Registry_1_1Type_1a2262020b59996fe1363c1e1058711944" prot="public" virt="virtual"><scope>endstone::ItemType</scope><name>~Type</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

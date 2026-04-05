@@ -10,10 +10,7 @@
 
 
 
-* `#include "endstone/detail.h"`
-* `#include "endstone/identifier.h"`
 * `#include "endstone/registry.h"`
-* `#include "endstone/server.h"`
 
 
 
