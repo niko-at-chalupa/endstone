@@ -131,6 +131,7 @@ _Represents a button with text and an optional icon._
 | class | [**ModalForm**](classendstone_1_1ModalForm.md) <br>_Represents a modal form with controls._  |
 | class | [**NotNull**](classendstone_1_1NotNull.md) &lt;[**class**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md)&gt;<br> |
 | class | [**Nullable**](classendstone_1_1Nullable.md) &lt;[**class**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md)&gt;<br> |
+| class | [**Object**](classendstone_1_1Object.md) <br>_Base class providing runtime type identification and safe casting._  |
 | class | [**Objective**](classendstone_1_1Objective.md) <br>_Represents an objective on a scoreboard that can show scores specific to entries._  |
 | class | [**OfflinePlayer**](classendstone_1_1OfflinePlayer.md) <br>_Represents a reference to a player identity and the data belonging to a player that is stored on the disk and can, thus, be retrieved without the player needing to be online._  |
 | class | [**PacketReceiveEvent**](classendstone_1_1PacketReceiveEvent.md) <br>_Called when the server receives a packet from a connected client._  |

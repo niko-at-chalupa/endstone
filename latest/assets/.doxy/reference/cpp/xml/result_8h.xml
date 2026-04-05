@@ -9,7 +9,6 @@
     <includedby refid="block__state_8h" local="yes">include/endstone/block/block_state.h</includedby>
     <includedby refid="player__move__event_8h" local="yes">include/endstone/event/player/player_move_event.h</includedby>
     <includedby refid="inventory_8h" local="yes">include/endstone/inventory/inventory.h</includedby>
-    <includedby refid="dimension_8h" local="yes">include/endstone/level/dimension.h</includedby>
     <includedby refid="location_8h" local="yes">include/endstone/level/location.h</includedby>
     <includedby refid="permissible_8h" local="yes">include/endstone/permissions/permissible.h</includedby>
     <includedby refid="objective_8h" local="yes">include/endstone/scoreboard/objective.h</includedby>
@@ -46,13 +45,15 @@
         </childnode>
         <childnode refid="75" relation="include">
         </childnode>
-        <childnode refid="77" relation="include">
+        <childnode refid="78" relation="include">
         </childnode>
         <childnode refid="80" relation="include">
         </childnode>
         <childnode refid="84" relation="include">
         </childnode>
         <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="94" relation="include">
         </childnode>
@@ -62,11 +63,15 @@
         <link refid="item_8h_source"/>
         <childnode refid="47" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="75">
         <label>include/endstone/actor/mob.h</label>
         <link refid="mob_8h_source"/>
         <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="31" relation="include">
         </childnode>
@@ -165,12 +170,12 @@
         <label>include/endstone/command/plugin_command.h</label>
         <link refid="plugin__command_8h_source"/>
       </node>
-      <node id="77">
+      <node id="78">
         <label>include/endstone/damage/damage_source.h</label>
         <link refid="damage__source_8h_source"/>
-        <childnode refid="78" relation="include">
-        </childnode>
         <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
         </childnode>
       </node>
       <node id="53">
@@ -179,11 +184,11 @@
         <childnode refid="54" relation="include">
         </childnode>
       </node>
-      <node id="78">
+      <node id="79">
         <label>include/endstone/event/actor/actor_damage_event.h</label>
         <link refid="actor__damage__event_8h_source"/>
       </node>
-      <node id="79">
+      <node id="76">
         <label>include/endstone/event/actor/actor_death_event.h</label>
         <link refid="actor__death__event_8h_source"/>
         <childnode refid="33" relation="include">
@@ -192,13 +197,13 @@
       <node id="80">
         <label>include/endstone/event/actor/actor_event.h</label>
         <link refid="actor__event_8h_source"/>
-        <childnode refid="78" relation="include">
-        </childnode>
         <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="76" relation="include">
+        <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="81" relation="include">
         </childnode>
@@ -211,7 +216,7 @@
         <label>include/endstone/event/actor/actor_explode_event.h</label>
         <link refid="actor__explode__event_8h_source"/>
       </node>
-      <node id="76">
+      <node id="77">
         <label>include/endstone/event/actor/actor_knockback_event.h</label>
         <link refid="actor__knockback__event_8h_source"/>
       </node>
@@ -835,8 +840,6 @@
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="29" relation="include">
-        </childnode>
-        <childnode refid="20" relation="include">
         </childnode>
         <childnode refid="73" relation="include">
         </childnode>

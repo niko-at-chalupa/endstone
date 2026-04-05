@@ -32,9 +32,6 @@
 namespace endstone {
 class WritableBookMeta : public ItemMeta {
 public:
-    ENDSTONE_ITEM_META_TYPE(WritableBook)
-
-    
     [[nodiscard]] virtual bool hasPages() const = 0;
 
     [[nodiscard]] virtual std::string getPage(int page) const = 0;

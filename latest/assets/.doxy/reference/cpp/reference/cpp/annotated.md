@@ -100,6 +100,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
     * **class** [**ModalForm**](classendstone_1_1ModalForm.md) _Represents a modal form with controls._     
     * **class** [**NotNull**](classendstone_1_1NotNull.md)     
     * **class** [**Nullable**](classendstone_1_1Nullable.md)     
+    * **class** [**Object**](classendstone_1_1Object.md) _Base class providing runtime type identification and safe casting._     
     * **class** [**Objective**](classendstone_1_1Objective.md) _Represents an objective on a scoreboard that can show scores specific to entries._     
     * **class** [**OfflinePlayer**](classendstone_1_1OfflinePlayer.md) _Represents a reference to a player identity and the data belonging to a player that is stored on the disk and can, thus, be retrieved without the player needing to be online._     
     * **class** [**PacketReceiveEvent**](classendstone_1_1PacketReceiveEvent.md) _Called when the server receives a packet from a connected client._     

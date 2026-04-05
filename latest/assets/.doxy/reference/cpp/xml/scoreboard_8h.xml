@@ -130,6 +130,8 @@
         <link refid="item_8h_source"/>
         <childnode refid="25" relation="include">
         </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
       </node>
       <node id="30">
         <label>include/endstone/block/block_type.h</label>
@@ -149,7 +151,7 @@
         <label>include/endstone/event/actor/player_death_event.h</label>
         <link refid="player__death__event_8h_source"/>
       </node>
-      <node id="36">
+      <node id="41">
         <label>include/endstone/event/block/block_cook_event.h</label>
         <link refid="block__cook__event_8h_source"/>
       </node>
@@ -157,19 +159,19 @@
         <label>include/endstone/event/block/block_place_event.h</label>
         <link refid="block__place__event_8h_source"/>
       </node>
-      <node id="40">
+      <node id="38">
         <label>include/endstone/event/chunk/chunk_event.h</label>
         <link refid="chunk__event_8h_source"/>
-        <childnode refid="41" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="39">
         <label>include/endstone/event/chunk/chunk_load_event.h</label>
         <link refid="chunk__load__event_8h_source"/>
       </node>
-      <node id="42">
+      <node id="40">
         <label>include/endstone/event/chunk/chunk_unload_event.h</label>
         <link refid="chunk__unload__event_8h_source"/>
       </node>
@@ -183,10 +185,10 @@
         <label>include/endstone/event/handler_list.h</label>
         <link refid="handler__list_8h_source"/>
       </node>
-      <node id="39">
+      <node id="37">
         <label>include/endstone/event/level/dimension_event.h</label>
         <link refid="dimension__event_8h_source"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -354,7 +356,7 @@
         <link refid="item__stack_8h_source"/>
         <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="11" relation="include">
         </childnode>
@@ -362,9 +364,9 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="42" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
       <node id="47">
@@ -407,14 +409,14 @@
         <childnode refid="46" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="42">
         <label>include/endstone/inventory/recipe.h</label>
         <link refid="recipe_8h_source"/>
       </node>
-      <node id="38">
+      <node id="36">
         <label>include/endstone/level/dimension.h</label>
         <link refid="dimension_8h_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
       <node id="2">

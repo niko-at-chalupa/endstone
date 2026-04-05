@@ -2555,17 +2555,6 @@ For latest updates join the chat on
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-    <a href="#public-types-inherited-from-endstoneitemmeta" class="md-nav__link">
-      <span class="md-ellipsis">
-        Public Types inherited from endstone::ItemMeta
-      </span>
-    </a>
-
-    <!-- Table of contents list -->
-    
-</li>
-      
-        <li class="md-nav__item">
     <a href="#public-functions" class="md-nav__link">
       <span class="md-ellipsis">
         Public Functions
@@ -2580,6 +2569,17 @@ For latest updates join the chat on
     <a href="#public-functions-inherited-from-endstoneitemmeta" class="md-nav__link">
       <span class="md-ellipsis">
         Public Functions inherited from endstone::ItemMeta
+      </span>
+    </a>
+
+    <!-- Table of contents list -->
+    
+</li>
+      
+        <li class="md-nav__item">
+    <a href="#public-functions-inherited-from-endstoneobject" class="md-nav__link">
+      <span class="md-ellipsis">
+        Public Functions inherited from endstone::Object
       </span>
     </a>
 
@@ -2762,22 +2762,6 @@ For latest updates join the chat on
 </ul>
 <p>Inherits the following classes: <a href="../classendstone_1_1ItemMeta/">endstone::ItemMeta</a></p>
 <p>Inherited by the following classes: <a href="../classendstone_1_1BookMeta/">endstone::BookMeta</a></p>
-<h2 id="public-types-inherited-from-endstoneitemmeta">Public Types inherited from endstone::ItemMeta<a class="headerlink" href="#public-types-inherited-from-endstoneitemmeta" title="Permanent link">&para;</a></h2>
-<p>See <a href="../classendstone_1_1ItemMeta/">endstone::ItemMeta</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Type</th>
-<th style="text-align: left;">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">enum</td>
-<td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#enum-type"><strong>Type</strong></a>  <br></td>
-</tr>
-</tbody>
-</table>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2840,14 +2824,6 @@ For latest updates join the chat on
 <td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-addenchant"><strong>addEnchant</strong></a> (<a href="../classendstone_1_1Identifier/"><strong>EnchantmentId</strong></a> id, <a href="../classendstone_1_1Identifier/"><strong>int</strong></a> level, <a href="../classendstone_1_1Identifier/"><strong>bool</strong></a> force) = 0<br><em>Adds the specified enchantment to this item meta.</em></td>
 </tr>
 <tr>
-<td style="text-align: right;"><a href="../classendstone_1_1Identifier/"><strong>T</strong></a> *</td>
-<td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-as-12"><strong>as</strong></a> () <br></td>
-</tr>
-<tr>
-<td style="text-align: right;"><a href="../classendstone_1_1Identifier/"><strong>const</strong></a> <a href="../classendstone_1_1Identifier/"><strong>T</strong></a> *</td>
-<td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-as-22"><strong>as</strong></a> () const<br></td>
-</tr>
-<tr>
 <td style="text-align: right;">virtual std::unique_ptr&lt; <a href="../classendstone_1_1ItemMeta/"><strong>ItemMeta</strong></a> &gt;</td>
 <td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-clone"><strong>clone</strong></a> () const = 0<br><em>Creates a clone of the current metadata.</em></td>
 </tr>
@@ -2878,10 +2854,6 @@ For latest updates join the chat on
 <tr>
 <td style="text-align: right;">virtual <a href="../classendstone_1_1Identifier/"><strong>int</strong></a></td>
 <td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-getrepaircost"><strong>getRepairCost</strong></a> () const = 0<br><em>Gets the repair penalty.</em></td>
-</tr>
-<tr>
-<td style="text-align: right;">virtual Type</td>
-<td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-gettype"><strong>getType</strong></a> () const = 0<br><em>Gets the type of this item meta.</em></td>
 </tr>
 <tr>
 <td style="text-align: right;">virtual <a href="../classendstone_1_1Identifier/"><strong>bool</strong></a></td>
@@ -2943,9 +2915,41 @@ For latest updates join the chat on
 <td style="text-align: right;">virtual <a href="../classendstone_1_1Identifier/"><strong>void</strong></a></td>
 <td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-setunbreakable"><strong>setUnbreakable</strong></a> (<a href="../classendstone_1_1Identifier/"><strong>bool</strong></a> unbreakable) = 0<br><em>Sets the unbreakable tag. An unbreakable item will not lose durability.</em></td>
 </tr>
+</tbody>
+</table>
+<h2 id="public-functions-inherited-from-endstoneobject">Public Functions inherited from endstone::Object<a class="headerlink" href="#public-functions-inherited-from-endstoneobject" title="Permanent link">&para;</a></h2>
+<p>See <a href="../classendstone_1_1Object/">endstone::Object</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Type</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><a href="../classendstone_1_1Identifier/"><strong>T</strong></a> *</td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-as-12"><strong>as</strong></a> () <br><em>Attempts to cast this object to the given type T.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../classendstone_1_1Identifier/"><strong>const</strong></a> <a href="../classendstone_1_1Identifier/"><strong>T</strong></a> *</td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-as-22"><strong>as</strong></a> () const<br><em>Attempts to cast this object to the given type T.</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual <a href="../classendstone_1_1Identifier/"><strong>const</strong></a> std::type_info &amp;</td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-getclasstypeid"><strong>getClassTypeId</strong></a> () const = 0<br></td>
+</tr>
+<tr>
+<td style="text-align: right;"><a href="../classendstone_1_1Identifier/"><strong>bool</strong></a></td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-is"><strong>is</strong></a> () const<br><em>Checks if this object is an instance of the given type T (or a subclass of T).</em></td>
+</tr>
+<tr>
+<td style="text-align: right;">virtual <a href="../classendstone_1_1Identifier/"><strong>bool</strong></a></td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-isinstanceof"><strong>isInstanceOf</strong></a> (<a href="../classendstone_1_1Identifier/"><strong>const</strong></a> std::type_info &amp; target) const = 0<br></td>
+</tr>
 <tr>
 <td style="text-align: right;">virtual</td>
-<td style="text-align: left;"><a href="../classendstone_1_1ItemMeta/#function-itemmeta"><strong>~ItemMeta</strong></a> () = default<br></td>
+<td style="text-align: left;"><a href="../classendstone_1_1Object/#function-object"><strong>~Object</strong></a> () = default<br></td>
 </tr>
 </tbody>
 </table>

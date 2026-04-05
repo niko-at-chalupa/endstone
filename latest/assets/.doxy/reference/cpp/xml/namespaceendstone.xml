@@ -97,6 +97,7 @@
     <innerclass refid="classendstone_1_1ModalForm" prot="public">endstone::ModalForm</innerclass>
     <innerclass refid="classendstone_1_1NotNull" prot="public">endstone::NotNull</innerclass>
     <innerclass refid="classendstone_1_1Nullable" prot="public">endstone::Nullable</innerclass>
+    <innerclass refid="classendstone_1_1Object" prot="public">endstone::Object</innerclass>
     <innerclass refid="classendstone_1_1Objective" prot="public">endstone::Objective</innerclass>
     <innerclass refid="classendstone_1_1OfflinePlayer" prot="public">endstone::OfflinePlayer</innerclass>
     <innerclass refid="structendstone_1_1overloaded" prot="public">endstone::overloaded</innerclass>
