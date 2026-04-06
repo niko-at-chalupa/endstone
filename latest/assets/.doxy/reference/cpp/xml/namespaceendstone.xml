@@ -12,6 +12,7 @@
     <innerclass refid="classendstone_1_1ActorRemoveEvent" prot="public">endstone::ActorRemoveEvent</innerclass>
     <innerclass refid="classendstone_1_1ActorSpawnEvent" prot="public">endstone::ActorSpawnEvent</innerclass>
     <innerclass refid="classendstone_1_1ActorTeleportEvent" prot="public">endstone::ActorTeleportEvent</innerclass>
+    <innerclass refid="classendstone_1_1ActorType" prot="public">endstone::ActorType</innerclass>
     <innerclass refid="classendstone_1_1Attribute" prot="public">endstone::Attribute</innerclass>
     <innerclass refid="classendstone_1_1AttributeInstance" prot="public">endstone::AttributeInstance</innerclass>
     <innerclass refid="classendstone_1_1AttributeModifier" prot="public">endstone::AttributeModifier</innerclass>
@@ -862,6 +863,20 @@
       </memberdef>
     </sectiondef>
     <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceendstone_1a94ee63841c0963c0a0676b0783e03486" prot="public" static="no">
+        <type><ref refid="classendstone_1_1Identifier" kindref="compound">Identifier</ref>&lt; <ref refid="classendstone_1_1ActorType" kindref="compound">ActorType</ref> &gt;</type>
+        <definition>using endstone::ActorTypeId = typedef Identifier&lt;ActorType&gt;</definition>
+        <argsstring></argsstring>
+        <name>ActorTypeId</name>
+        <qualifiedname>endstone::ActorTypeId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/endstone/actor/actor_type.h" line="24" column="1" bodyfile="include/endstone/actor/actor_type.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespaceendstone_1ac2d399872c391e7ce2ec1896ba62e669" prot="public" static="no">
         <type><ref refid="classendstone_1_1Identifier" kindref="compound">Identifier</ref>&lt; <ref refid="classendstone_1_1Identifier" kindref="compound">class</ref> <ref refid="classendstone_1_1Attribute" kindref="compound">Attribute</ref> &gt;</type>
         <definition>using endstone::AttributeId = typedef Identifier&lt;class Attribute&gt;</definition>
@@ -1466,6 +1481,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="include/endstone/actor/actor.h" line="24" column="1"/>
+    <location file="include/endstone/actor/actor.h" line="25" column="1"/>
   </compounddef>
 </doxygen>

@@ -28,6 +28,7 @@
 #include <string>
 #include <vector>
 
+#include "endstone/actor/actor_type.h"
 #include "endstone/command/command_sender.h"
 #include "endstone/level/location.h"
 
@@ -35,7 +36,7 @@ namespace endstone {
 class Level;
 class Actor : public CommandSender {
 public:
-    [[nodiscard]] virtual std::string getType() const = 0;
+    [[nodiscard]] virtual const ActorType &getType() const = 0;
 
     [[nodiscard]] virtual std::uint64_t getRuntimeId() const = 0;
 

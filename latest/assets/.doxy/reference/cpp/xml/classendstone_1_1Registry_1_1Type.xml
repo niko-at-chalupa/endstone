@@ -2,6 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
   <compounddef id="classendstone_1_1Registry_1_1Type" kind="class" language="C++" prot="public" abstract="yes">
     <compoundname>endstone::Registry::Type</compoundname>
+    <derivedcompoundref refid="classendstone_1_1ActorType" prot="public" virt="non-virtual">endstone::ActorType</derivedcompoundref>
     <derivedcompoundref refid="classendstone_1_1BlockType" prot="public" virt="non-virtual">endstone::BlockType</derivedcompoundref>
     <derivedcompoundref refid="classendstone_1_1Enchantment" prot="public" virt="non-virtual">endstone::Enchantment</derivedcompoundref>
     <derivedcompoundref refid="classendstone_1_1ItemType" prot="public" virt="non-virtual">endstone::ItemType</derivedcompoundref>
@@ -202,18 +203,24 @@
     </detaileddescription>
     <inheritancegraph>
       <node id="2">
+        <label>endstone::ActorType</label>
+        <link refid="classendstone_1_1ActorType"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
         <label>endstone::BlockType</label>
         <link refid="classendstone_1_1BlockType"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
+      <node id="4">
         <label>endstone::Enchantment</label>
         <link refid="classendstone_1_1Enchantment"/>
         <childnode refid="1" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="4">
+      <node id="5">
         <label>endstone::ItemType</label>
         <link refid="classendstone_1_1ItemType"/>
         <childnode refid="1" relation="public-inheritance">

@@ -1771,7 +1771,7 @@
       <member refid="classendstone_1_1CommandSender_1aecd5cad85026861938379fa283d626cf" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getServer</name></member>
       <member refid="classendstone_1_1Player_1ad4ba000ca191ec1f66d75839c7bfe109" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getSkin</name></member>
       <member refid="classendstone_1_1Player_1ad91364e3a8a8a33750d38970626646fc" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getTotalExp</name></member>
-      <member refid="classendstone_1_1Actor_1a35dbee5875715f9edd8be8b117377129" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getType</name></member>
+      <member refid="classendstone_1_1Actor_1aa0f55b8bda747d969190c12da00e4fe8" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getType</name></member>
       <member refid="classendstone_1_1Player_1a2f6259d8ac07fb50c56757844786683b" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getUniqueId</name></member>
       <member refid="classendstone_1_1Actor_1a991a21714a41b82ee7785c0dbf176c3a" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getVelocity</name></member>
       <member refid="classendstone_1_1Player_1af8f804891833ccea4e124df9390557b6" prot="public" virt="pure-virtual"><scope>endstone::Player</scope><name>getWalkSpeed</name></member>

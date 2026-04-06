@@ -383,10 +383,10 @@
         </inbodydescription>
         <location file="include/endstone/level/dimension.h" line="126" column="19"/>
       </memberdef>
-      <memberdef kind="function" id="classendstone_1_1Dimension_1a04d2c983f8a2311339d6b3b716fa66a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+      <memberdef kind="function" id="classendstone_1_1Dimension_1a0106dd8b17e3394081568a0ba631cb26" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="classendstone_1_1Actor" kindref="compound">Actor</ref> *</type>
         <definition>virtual Actor * endstone::Dimension::spawnActor</definition>
-        <argsstring>(Location location, std::string type)=0</argsstring>
+        <argsstring>(Location location, ActorTypeId type)=0</argsstring>
         <name>spawnActor</name>
         <qualifiedname>endstone::Dimension::spawnActor</qualifiedname>
         <param>
@@ -394,7 +394,7 @@
           <declname>location</declname>
         </param>
         <param>
-          <type>std::string</type>
+          <type><ref refid="classendstone_1_1Identifier" kindref="compound">ActorTypeId</ref></type>
           <declname>type</declname>
         </param>
         <briefdescription>
@@ -414,7 +414,7 @@
 <parametername>type</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The actor to spawn </para>
+<para>The actor type to spawn </para>
 </parameterdescription>
 </parameteritem>
 </parameterlist>
@@ -463,7 +463,7 @@
       <member refid="classendstone_1_1Dimension_1a065a2b1242a809b89dd1502b2ad828b6" prot="public" virt="pure-virtual"><scope>endstone::Dimension</scope><name>getLoadedChunks</name></member>
       <member refid="classendstone_1_1Dimension_1a3cd59f6145706ead47d173255a10a39d" prot="public" virt="pure-virtual"><scope>endstone::Dimension</scope><name>getName</name></member>
       <member refid="classendstone_1_1Dimension_1a9d9baf77525291924f80c682cc3d012c" prot="public" virt="pure-virtual"><scope>endstone::Dimension</scope><name>getType</name></member>
-      <member refid="classendstone_1_1Dimension_1a04d2c983f8a2311339d6b3b716fa66a0" prot="public" virt="pure-virtual"><scope>endstone::Dimension</scope><name>spawnActor</name></member>
+      <member refid="classendstone_1_1Dimension_1a0106dd8b17e3394081568a0ba631cb26" prot="public" virt="pure-virtual"><scope>endstone::Dimension</scope><name>spawnActor</name></member>
       <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356b" prot="public" virt="non-virtual"><scope>endstone::Dimension</scope><name>Type</name></member>
       <member refid="classendstone_1_1Dimension_1a24406b7020898c1be0ce62e57ffce62d" prot="public" virt="virtual"><scope>endstone::Dimension</scope><name>~Dimension</name></member>
     </listofallmembers>

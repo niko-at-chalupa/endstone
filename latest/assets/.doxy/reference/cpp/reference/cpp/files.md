@@ -13,6 +13,7 @@ Here is a list of all files with brief descriptions:
         * **file** [**identifier.h**](identifier_8h.md)     
         * **dir** [**actor**](dir_dd7779a583e02d88c9a89a2c881c3946.md)     
             * **file** [**actor.h**](actor_8h.md)     
+            * **file** [**actor\_type.h**](actor__type_8h.md)     
             * **file** [**item.h**](item_8h.md)     
             * **file** [**mob.h**](mob_8h.md)     
         * **dir** [**attribute**](dir_5bd322557a2ad4dbfaf5ca599d780f7c.md)     

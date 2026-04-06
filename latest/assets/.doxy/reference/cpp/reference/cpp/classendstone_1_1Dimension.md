@@ -68,7 +68,7 @@ _Represents a dimension within a_ [_**Level**_](classendstone_1_1Level.md) _._
 | virtual std::vector&lt; std::unique\_ptr&lt; [**Chunk**](classendstone_1_1Chunk.md) &gt; &gt; | [**getLoadedChunks**](#function-getloadedchunks) () = 0<br>_Gets a list of all loaded Chunks._  |
 | virtual std::string | [**getName**](#function-getname) () const = 0<br>_Gets the name of this dimension._  |
 | virtual [**Type**](classendstone_1_1Dimension.md#enum-type) | [**getType**](#function-gettype) () const = 0<br>_Gets the type of this dimension._  |
-| virtual [**Actor**](classendstone_1_1Actor.md) \* | [**spawnActor**](#function-spawnactor) ([**Location**](classendstone_1_1Location.md) location, std::string type) = 0<br>_Creates an actor at the given_ [_**Location**_](classendstone_1_1Location.md) _._ |
+| virtual [**Actor**](classendstone_1_1Actor.md) \* | [**spawnActor**](#function-spawnactor) ([**Location**](classendstone_1_1Location.md) location, [**ActorTypeId**](classendstone_1_1Identifier.md) type) = 0<br>_Creates an actor at the given_ [_**Location**_](classendstone_1_1Location.md) _._ |
 | virtual  | [**~Dimension**](#function-dimension) () = default<br> |
 
 
@@ -469,7 +469,7 @@ _Creates an actor at the given_ [_**Location**_](classendstone_1_1Location.md) _
 ```C++
 virtual Actor * endstone::Dimension::spawnActor (
     Location location,
-    std::string type
+    ActorTypeId type
 ) = 0
 ```
 
@@ -481,7 +481,7 @@ virtual Actor * endstone::Dimension::spawnActor (
 
 
 * `location` The location to spawn the actor 
-* `type` The actor to spawn 
+* `type` The actor type to spawn 
 
 
 

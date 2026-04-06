@@ -85,6 +85,7 @@ Inherits the following classes: [endstone::IRegistry](classendstone_1_1IRegistry
 | virtual [**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) \* | [**get**](#function-get-22) ([**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; id) noexcept const = 0<br>_Get the object by its identifier._  |
 | virtual [**T**](classendstone_1_1Identifier.md) & | [**getOrThrow**](#function-getorthrow-12) ([**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; id) <br>_Get the object by its identifier or throw if missing._  |
 | virtual [**const**](classendstone_1_1Identifier.md) [**T**](classendstone_1_1Identifier.md) & | [**getOrThrow**](#function-getorthrow-22) ([**Identifier**](classendstone_1_1Identifier.md)&lt; [**T**](classendstone_1_1Identifier.md) &gt; id) const<br>_Get the object by its identifier or throw if missing._  |
+| virtual std::size\_t | [**size**](#function-size) () const = 0<br>_Returns the number of entries in this registry._  |
 
 
 ## Public Functions inherited from endstone::IRegistry
@@ -346,6 +347,31 @@ const T& Const reference to the object with the given identifier.
 
 
 * `std::invalid_argument` if no object with the given identifier exists. 
+
+
+
+
+        
+
+<hr>
+
+
+
+### function size 
+
+_Returns the number of entries in this registry._ 
+```C++
+virtual std::size_t endstone::Registry::size () const = 0
+```
+
+
+
+
+
+**Returns:**
+
+std::size\_t The number of entries. 
+
 
 
 

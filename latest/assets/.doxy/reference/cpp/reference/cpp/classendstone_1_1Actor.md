@@ -123,7 +123,7 @@ Inherited by the following classes: [endstone::Item](classendstone_1_1Item.md), 
 | virtual std::uint64\_t | [**getRuntimeId**](#function-getruntimeid) () const = 0<br> |
 | virtual std::string | [**getScoreTag**](#function-getscoretag) () const = 0<br>_Gets the current score tag of the actor._  |
 | virtual std::vector&lt; std::string &gt; | [**getScoreboardTags**](#function-getscoreboardtags) () const = 0<br>_Returns a list of scoreboard tags for this actor._  |
-| virtual std::string | [**getType**](#function-gettype) () const = 0<br>_Get the type of the actor._  |
+| virtual [**const**](classendstone_1_1Identifier.md) [**ActorType**](classendstone_1_1ActorType.md) & | [**getType**](#function-gettype) () const = 0<br>_Get the type of the actor._  |
 | virtual [**Vector**](classendstone_1_1Vector.md) | [**getVelocity**](#function-getvelocity) () const = 0<br> |
 | virtual [**bool**](classendstone_1_1Identifier.md) | [**isDead**](#function-isdead) () const = 0<br>_Returns true if this actor has been marked for removal._  |
 | virtual [**bool**](classendstone_1_1Identifier.md) | [**isInLava**](#function-isinlava) () const = 0<br> |
@@ -544,12 +544,9 @@ a list of scoreboard tags for this actor
 
 _Get the type of the actor._ 
 ```C++
-virtual std::string endstone::Actor::getType () const = 0
+virtual const  ActorType & endstone::Actor::getType () const = 0
 ```
 
-
-
-This method returns the type of the actor as a string, for example, minecraft:pig.
 
 
 

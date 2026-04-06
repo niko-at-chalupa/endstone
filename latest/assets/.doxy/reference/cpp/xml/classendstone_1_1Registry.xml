@@ -185,6 +185,24 @@
         </inbodydescription>
         <location file="include/endstone/registry.h" line="148" column="18"/>
       </memberdef>
+      <memberdef kind="function" id="classendstone_1_1Registry_1af8fcce1ccfce7e09cb272478976b902e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::size_t</type>
+        <definition>virtual std::size_t endstone::Registry&lt; T &gt;::size</definition>
+        <argsstring>() const =0</argsstring>
+        <name>size</name>
+        <qualifiedname>endstone::Registry::size</qualifiedname>
+        <briefdescription>
+<para>Returns the number of entries in this registry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>std::size_t The number of entries. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/endstone/registry.h" line="155" column="26"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
 <para>Abstract registry interface for objects with identifiers. </para>
@@ -226,13 +244,14 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/endstone/registry.h" line="42" column="1" bodyfile="include/endstone/registry.h" bodystart="42" bodyend="149"/>
+    <location file="include/endstone/registry.h" line="42" column="1" bodyfile="include/endstone/registry.h" bodystart="42" bodyend="156"/>
     <listofallmembers>
       <member refid="classendstone_1_1Registry_1ad4ccf75b2d21093309be4663cbc9e71b" prot="public" virt="pure-virtual"><scope>endstone::Registry</scope><name>forEach</name></member>
       <member refid="classendstone_1_1Registry_1a97c2758ea2a49ded5abeae90e02a31a0" prot="public" virt="pure-virtual"><scope>endstone::Registry</scope><name>get</name></member>
       <member refid="classendstone_1_1Registry_1a1e7e2da1521bc7755ca57cbf5bd41fda" prot="public" virt="pure-virtual"><scope>endstone::Registry</scope><name>get</name></member>
       <member refid="classendstone_1_1Registry_1a3c9abfdf664a59b267798fd1dfc1a884" prot="public" virt="virtual"><scope>endstone::Registry</scope><name>getOrThrow</name></member>
       <member refid="classendstone_1_1Registry_1a341f0a7dbb53815740f1c23b47ccddec" prot="public" virt="virtual"><scope>endstone::Registry</scope><name>getOrThrow</name></member>
+      <member refid="classendstone_1_1Registry_1af8fcce1ccfce7e09cb272478976b902e" prot="public" virt="pure-virtual"><scope>endstone::Registry</scope><name>size</name></member>
       <member refid="classendstone_1_1IRegistry_1a06d066c86d938e8ab986cb51eadae54f" prot="public" virt="virtual"><scope>endstone::Registry</scope><name>~IRegistry</name></member>
     </listofallmembers>
   </compounddef>

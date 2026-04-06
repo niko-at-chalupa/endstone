@@ -67,7 +67,7 @@ public:
 
     [[nodiscard]] virtual Item &dropItem(Location location, const ItemStack &item) = 0;
 
-    [[nodiscard]] virtual Actor *spawnActor(Location location, std::string type) = 0;
+    [[nodiscard]] virtual Actor *spawnActor(Location location, ActorTypeId type) = 0;
 
     [[nodiscard]] virtual std::vector<Actor *> getActors() const = 0;
 };
