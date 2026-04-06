@@ -30,6 +30,7 @@ _Represents a button with text and an optional icon._
 | namespace | [**core**](namespaceendstone_1_1core.md) <br> |
 | namespace | [**detail**](namespaceendstone_1_1detail.md) <br> |
 | namespace | [**nbt**](namespaceendstone_1_1nbt.md) <br> |
+| namespace | [**python**](namespaceendstone_1_1python.md) <br> |
 
 
 ## Classes

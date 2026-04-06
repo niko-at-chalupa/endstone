@@ -1174,7 +1174,12 @@
     <member refid="classendstone_1_1IpBanList_1ac87901f151c53c57c5ae8267c7b7d601" kind="function"><name>removeBan</name></member>
   </compound>
   <compound refid="classendstone_1_1IRegistry" kind="class"><name>endstone::IRegistry</name>
+    <member refid="classendstone_1_1IRegistry_1a0e0e0b2531a45e47cdbcfde16e8f4812" kind="friend"><name>python::PyRegistry</name></member>
     <member refid="classendstone_1_1IRegistry_1a06d066c86d938e8ab986cb51eadae54f" kind="function"><name>~IRegistry</name></member>
+    <member refid="classendstone_1_1IRegistry_1af9fcd05fdd3d73506763e7cc923cf4cb" kind="function"><name>size</name></member>
+    <member refid="classendstone_1_1IRegistry_1a25e5e92882a43fd4da14e6922d75007a" kind="function"><name>get0</name></member>
+    <member refid="classendstone_1_1IRegistry_1acc8156c0ec4f22dee71f290fc030eb25" kind="function"><name>forEach0</name></member>
+    <member refid="classendstone_1_1IRegistry_1a4d46fa889687149d8c026b1c91261543" kind="function"><name>getTypeId</name></member>
   </compound>
   <compound refid="classendstone_1_1Item" kind="class"><name>endstone::Item</name>
     <member refid="classendstone_1_1Item_1aecc6e7de84c65dbe99809fc47c1284e6" kind="function"><name>getItemStack</name></member>
@@ -2219,7 +2224,10 @@
     <member refid="classendstone_1_1Registry_1a3c9abfdf664a59b267798fd1dfc1a884" kind="function"><name>getOrThrow</name></member>
     <member refid="classendstone_1_1Registry_1a341f0a7dbb53815740f1c23b47ccddec" kind="function"><name>getOrThrow</name></member>
     <member refid="classendstone_1_1Registry_1ad4ccf75b2d21093309be4663cbc9e71b" kind="function"><name>forEach</name></member>
-    <member refid="classendstone_1_1Registry_1af8fcce1ccfce7e09cb272478976b902e" kind="function"><name>size</name></member>
+    <member refid="classendstone_1_1Registry_1a8fafff73ec8ea9f5d6ff286ee77b4b53" kind="function"><name>size</name></member>
+    <member refid="classendstone_1_1Registry_1a663584327493863b52e18adf72c98758" kind="function"><name>get0</name></member>
+    <member refid="classendstone_1_1Registry_1ab2224379085df2cf418b866d7a0451c0" kind="function"><name>forEach0</name></member>
+    <member refid="classendstone_1_1Registry_1a1374ad3271083c33111f0fc75c87fb94" kind="function"><name>getTypeId</name></member>
   </compound>
   <compound refid="classendstone_1_1Scheduler" kind="class"><name>endstone::Scheduler</name>
     <member refid="classendstone_1_1Scheduler_1a869448c7e94100977f5c3026c6a16a45" kind="function"><name>~Scheduler</name></member>
@@ -2319,7 +2327,7 @@
     <member refid="classendstone_1_1Server_1a6aabbee05ed99ba41702ae926c6374b2" kind="function"><name>getBanList</name></member>
     <member refid="classendstone_1_1Server_1a8ab4971ec939f666bf3b98d1a80c7af3" kind="function"><name>getIpBanList</name></member>
     <member refid="classendstone_1_1Server_1a846007f57bf27a84e78f49b218c2fa7c" kind="function"><name>getServiceManager</name></member>
-    <member refid="classendstone_1_1Server_1a9ea05521ca2c068fb9acf07dd7af2eeb" kind="function"><name>_getRegistry</name></member>
+    <member refid="classendstone_1_1Server_1a845f601298b9157c2407118293d1d917" kind="function"><name>_getRegistry</name></member>
     <member refid="classendstone_1_1Server_1a767171af5232bcf5c1d1502f4903edea" kind="function"><name>getRegistry</name></member>
     <member refid="classendstone_1_1Server_1a1934abd049be85a1a3bf8170a0c56d49" kind="function"><name>getMap</name></member>
     <member refid="classendstone_1_1Server_1a4d65ff2e2b62f582c1615497bb8b5d83" kind="function"><name>createMap</name></member>
@@ -2823,6 +2831,8 @@
     <member refid="io_8h_1ad4669bbd058fe46a64cdec8b575650b0" kind="function"><name>write_tag_payload</name></member>
     <member refid="io_8h_1a606207e3a37f3992b18bf36fc8ac6484" kind="function"><name>read_tag_payload</name></member>
   </compound>
+  <compound refid="namespaceendstone_1_1python" kind="namespace"><name>endstone::python</name>
+  </compound>
   <compound refid="namespacefmt" kind="namespace"><name>fmt</name>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
@@ -3181,7 +3191,6 @@
   <compound refid="potion__type_8h" kind="file"><name>potion_type.h</name>
   </compound>
   <compound refid="registry_8h" kind="file"><name>registry.h</name>
-    <member refid="registry_8h_1afdb56fce672f84a423d8c9d0501a34e1" kind="define"><name>ENDSTONE_REGISTRY_TYPE</name></member>
   </compound>
   <compound refid="scheduler_8h" kind="file"><name>scheduler.h</name>
   </compound>

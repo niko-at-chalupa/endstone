@@ -185,6 +185,7 @@ Here are the classes, structs, unions and interfaces with brief descriptions:
         * **class** [**ValueTag**](classendstone_1_1nbt_1_1ValueTag.md)     
         * **namespace** [**detail**](namespaceendstone_1_1nbt_1_1detail.md)     
     * **struct** [**overloaded**](structendstone_1_1overloaded.md) _Helper type for visitors._ 
+    * **namespace** [**python**](namespaceendstone_1_1python.md) 
 * **class** [**Impl**](classendstone_1_1ItemStack_1_1Impl.md)     
 * **class** [**CommandBuilder**](classendstone_1_1detail_1_1CommandBuilder.md)     
 * **class** [**PermissionBuilder**](classendstone_1_1detail_1_1PermissionBuilder.md)     

@@ -16,6 +16,7 @@
 * `#include <stdexcept>`
 * `#include <string>`
 * `#include <string_view>`
+* `#include <typeinfo>`
 * `#include <utility>`
 * `#include <vector>`
 * `#include "endstone/ban/ip_ban_list.h"`

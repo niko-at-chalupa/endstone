@@ -176,6 +176,7 @@
     <innernamespace refid="namespaceendstone_1_1core">endstone::core</innernamespace>
     <innernamespace refid="namespaceendstone_1_1detail">endstone::detail</innernamespace>
     <innernamespace refid="namespaceendstone_1_1nbt">endstone::nbt</innernamespace>
+    <innernamespace refid="namespaceendstone_1_1python">endstone::python</innernamespace>
     <sectiondef kind="enum">
       <memberdef kind="enum" id="namespaceendstone_1aec620d05bd961a002c83b008e178a785" prot="public" static="no" strong="yes">
         <type></type>

@@ -2058,7 +2058,7 @@
         <link refid="classendstone_1_1Registry_1_1Type"/>
       </node>
     </collaborationgraph>
-    <location file="include/endstone/actor/actor_type.h" line="25" column="1" bodyfile="include/endstone/actor/actor_type.h" bodystart="25" bodyend="173"/>
+    <location file="include/endstone/actor/actor_type.h" line="25" column="1" bodyfile="include/endstone/actor/actor_type.h" bodystart="25" bodyend="171"/>
     <listofallmembers>
       <member refid="classendstone_1_1ActorType_1ac591b53b8f3aa18f307f00151dbf6372" prot="public" virt="non-virtual"><scope>endstone::ActorType</scope><name>Agent</name></member>
       <member refid="classendstone_1_1ActorType_1a2963964779e1b9af72af24df5863b010" prot="public" virt="non-virtual"><scope>endstone::ActorType</scope><name>Allay</name></member>

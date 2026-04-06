@@ -30,6 +30,7 @@
 #include <stdexcept>
 #include <string>
 #include <string_view>
+#include <typeinfo>
 #include <utility>
 #include <vector>
 
@@ -169,12 +170,12 @@ public:
 
     [[nodiscard]] virtual ServiceManager &getServiceManager() const = 0;
 
-    [[nodiscard]] virtual IRegistry *_getRegistry(const std::string &type) const = 0;
+    [[nodiscard]] virtual IRegistry *_getRegistry(const std::type_info &type) const = 0;
 
     template <typename T>
     [[nodiscard]] const Registry<T> &getRegistry() const
     {
-        return *static_cast<Registry<T> *>(_getRegistry(T::RegistryType));
+        return *static_cast<Registry<T> *>(_getRegistry(typeid(T)));
     }
 
     [[nodiscard]] virtual MapView *getMap(std::int64_t id) const = 0;
