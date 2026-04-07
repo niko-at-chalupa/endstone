@@ -3,6 +3,7 @@ Classes relating to handling triggered code executions.
 """
 
 import enum
+import typing
 
 from endstone import GameMode, Player, Skin
 from endstone.actor import Actor, Item, Mob
@@ -88,6 +89,8 @@ __all__ = [
     "WeatherEvent",
     "event_handler",
 ]
+
+_F = typing.TypeVar("_F", bound=(typing.Callable[..., None]))
 
 class EventPriority(enum.IntEnum):
     """
@@ -1151,6 +1154,7 @@ class WeatherChangeEvent(WeatherEvent, Cancellable):
         """
         ...
 
-def event_handler(
-    func=None, *, priority: EventPriority = EventPriority.NORMAL, ignore_cancelled: bool = False
-) -> None: ...
+@typing.overload
+def event_handler(__func: _F) -> _F: ...
+@typing.overload
+def event_handler(*, priority: EventPriority = ..., ignore_cancelled: bool = ...) -> typing.Callable[[_F], _F]: ...
