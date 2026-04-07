@@ -494,7 +494,7 @@
 * **isBanned** ([**endstone::BanList**](classendstone_1_1BanList.md), [**endstone::IpBanList**](classendstone_1_1IpBanList.md), [**endstone::PlayerBanList**](classendstone_1_1PlayerBanList.md))
 * **isVisible** ([**endstone::BossBar**](classendstone_1_1BossBar.md), [**endstone::MapCursor**](classendstone_1_1MapCursor.md))
 * **isCancellable** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::Event**](classendstone_1_1Event.md))
-* **isCancelled** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::ICancellable**](classendstone_1_1ICancellable.md), [**endstone::Task**](classendstone_1_1Task.md))
+* **isCancelled** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::Event**](classendstone_1_1Event.md), [**endstone::ICancellable**](classendstone_1_1ICancellable.md), [**endstone::Task**](classendstone_1_1Task.md))
 * **isRegistered** ([**endstone::Command**](classendstone_1_1Command.md))
 * **isInstanceOf** ([**endstone::CommandSenderWrapper**](classendstone_1_1CommandSenderWrapper.md), [**endstone::Object**](classendstone_1_1Object.md))
 * **isPermissionSet** ([**endstone::CommandSenderWrapper**](classendstone_1_1CommandSenderWrapper.md), [**endstone::Permissible**](classendstone_1_1Permissible.md))

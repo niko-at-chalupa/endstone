@@ -926,6 +926,7 @@
     <member refid="classendstone_1_1Event_1a826fe74f9c4195a36a364b9aeeb321bb" kind="function"><name>getEventName</name></member>
     <member refid="classendstone_1_1Event_1ae89b54f63dc32b0c8797a59db69b6931" kind="function"><name>isAsynchronous</name></member>
     <member refid="classendstone_1_1Event_1a262e0232aa1ac5f2db91298dc404c9ec" kind="function"><name>isCancellable</name></member>
+    <member refid="classendstone_1_1Event_1ac3037db7fc05c40795004e40ed8399fb" kind="function"><name>isCancelled</name></member>
   </compound>
   <compound refid="classendstone_1_1EventHandler" kind="class"><name>endstone::EventHandler</name>
     <member refid="classendstone_1_1EventHandler_1adb860867df4a0ec561d94c5861fd0546" kind="variable"><name>event_</name></member>

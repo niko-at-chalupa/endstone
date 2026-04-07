@@ -692,7 +692,7 @@
 * **isVisible** ([**endstone::BossBar**](classendstone_1_1BossBar.md), [**endstone::MapCursor**](classendstone_1_1MapCursor.md))
 * **icon\_** ([**endstone::Button**](classendstone_1_1Button.md), [**endstone::ModalForm**](classendstone_1_1ModalForm.md))
 * **isCancellable** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::Event**](classendstone_1_1Event.md))
-* **isCancelled** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::ICancellable**](classendstone_1_1ICancellable.md), [**endstone::Task**](classendstone_1_1Task.md))
+* **isCancelled** ([**endstone::Cancellable**](classendstone_1_1Cancellable.md), [**endstone::Event**](classendstone_1_1Event.md), [**endstone::ICancellable**](classendstone_1_1ICancellable.md), [**endstone::Task**](classendstone_1_1Task.md))
 * **Italic** ([**endstone::ColorFormat**](structendstone_1_1ColorFormat.md))
 * **isRegistered** ([**endstone::Command**](classendstone_1_1Command.md))
 * **isInstanceOf** ([**endstone::CommandSenderWrapper**](classendstone_1_1CommandSenderWrapper.md), [**endstone::Object**](classendstone_1_1Object.md))
