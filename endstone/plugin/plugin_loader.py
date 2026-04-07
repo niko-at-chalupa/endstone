@@ -138,18 +138,9 @@ class PythonPluginLoader(PluginLoader):
         self._uninstall_plugins()
 
     @staticmethod
-    def _find_plugin_eps() -> list[EntryPoint]:
-        """Returns all ``endstone`` entry points whose distribution name starts with ``endstone-``."""
-        return [
-            ep
-            for ep in entry_points(group="endstone")
-            if ep.dist is not None and ep.dist.name.replace("_", "-").startswith("endstone-")
-        ]
-
-    @staticmethod
     def _uninstall_plugins() -> None:
         """Uninstalls all currently installed endstone plugin distributions via pip."""
-        dists = [ep.dist.name for ep in PythonPluginLoader._find_plugin_eps()]  # type: ignore[union-attr]
+        dists = [ep.dist.name for ep in entry_points(group="endstone")]  # type: ignore[union-attr]
         if not dists:
             return
         subprocess.run(
@@ -204,7 +195,6 @@ class PythonPluginLoader(PluginLoader):
                 "--no-warn-script-location",
                 "--disable-pip-version-check",
             ],
-
         )
 
         eps = distribution(dist_name).entry_points.select(group="endstone")
@@ -227,7 +217,7 @@ class PythonPluginLoader(PluginLoader):
         loaded_plugins = []
 
         if not self._plugins:
-            for ep in self._find_plugin_eps():
+            for ep in entry_points(group="endstone"):
                 plugin = self._load_plugin_from_ep(ep)
                 if plugin:
                     loaded_plugins.append(plugin)
