@@ -19,6 +19,7 @@
 
 ## d
 
+* **DimensionId** ([**endstone**](namespaceendstone.md))
 * **DoubleTag** ([**endstone**](namespaceendstone.md))
 
 

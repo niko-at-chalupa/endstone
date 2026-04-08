@@ -23,6 +23,7 @@
 
 ## d
 
+* **DimensionId** ([**endstone**](namespaceendstone.md))
 * **DisplaySlot** ([**endstone**](namespaceendstone.md))
 * **DoubleTag** ([**endstone**](namespaceendstone.md))
 * **dump** ([**endstone::nbt**](namespaceendstone_1_1nbt.md))

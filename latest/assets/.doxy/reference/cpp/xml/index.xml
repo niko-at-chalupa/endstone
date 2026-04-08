@@ -781,14 +781,12 @@
     <member refid="classendstone_1_1DamageSource_1ab078db3a18d08b41dd6c73de066c2b02" kind="function"><name>isIndirect</name></member>
   </compound>
   <compound refid="classendstone_1_1Dimension" kind="class"><name>endstone::Dimension</name>
-    <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356b" kind="enum"><name>Type</name></member>
-    <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356ba50181b144eb2554dc2e45cd3d437e92f" kind="enumvalue"><name>Overworld</name></member>
-    <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356ba9134d6dfbf3aa9b4528acc8bf44dfb92" kind="enumvalue"><name>Nether</name></member>
-    <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356ba3a2445d89edbcab66b2cf292dac1bb58" kind="enumvalue"><name>TheEnd</name></member>
-    <member refid="classendstone_1_1Dimension_1a5dbe2e9365112e8c0f883978fae1356ba90589c47f06eb971d548591f23c285af" kind="enumvalue"><name>Custom</name></member>
+    <member refid="classendstone_1_1Dimension_1a99f35a38b77ed0d0927993dab3d588ef" kind="variable"><name>Overworld</name></member>
+    <member refid="classendstone_1_1Dimension_1a726839b7867bac84ebe5633eafedd341" kind="variable"><name>Nether</name></member>
+    <member refid="classendstone_1_1Dimension_1a578cf42cbf66c4b659b662f729e5c0ae" kind="variable"><name>TheEnd</name></member>
     <member refid="classendstone_1_1Dimension_1a24406b7020898c1be0ce62e57ffce62d" kind="function"><name>~Dimension</name></member>
-    <member refid="classendstone_1_1Dimension_1a3cd59f6145706ead47d173255a10a39d" kind="function"><name>getName</name></member>
-    <member refid="classendstone_1_1Dimension_1a9d9baf77525291924f80c682cc3d012c" kind="function"><name>getType</name></member>
+    <member refid="classendstone_1_1Dimension_1a3789147f11d07882e8a6d9d2b484838d" kind="function"><name>getId</name></member>
+    <member refid="classendstone_1_1Dimension_1ab1287961d58e20d3ac2d66240a232e8b" kind="function"><name>getTranslationKey</name></member>
     <member refid="classendstone_1_1Dimension_1a541fd7f166a3d746dde92b57e4843f6a" kind="function"><name>getLevel</name></member>
     <member refid="classendstone_1_1Dimension_1a3dee0a686f00cf7c2c861a798ccf2346" kind="function"><name>getBlockAt</name></member>
     <member refid="classendstone_1_1Dimension_1afd372293472494681775452163da7aed" kind="function"><name>getBlockAt</name></member>
@@ -1288,7 +1286,7 @@
     <member refid="classendstone_1_1Level_1a2a0a6904b53c1d0952c6bdcfce91d0cd" kind="function"><name>getTime</name></member>
     <member refid="classendstone_1_1Level_1a52d11546e286762d10b7c2a523fd2dd7" kind="function"><name>setTime</name></member>
     <member refid="classendstone_1_1Level_1ac4329b1323d1e61be61c1efeb4e8ecd9" kind="function"><name>getDimensions</name></member>
-    <member refid="classendstone_1_1Level_1ad688e6ab223f171816d8ed7956075c7e" kind="function"><name>getDimension</name></member>
+    <member refid="classendstone_1_1Level_1a0b7bf9c026e8c41c7f741fc04e2fbb54" kind="function"><name>getDimension</name></member>
     <member refid="classendstone_1_1Level_1a353a8752c7825d35373287ede5e4019a" kind="function"><name>getSeed</name></member>
   </compound>
   <compound refid="classendstone_1_1LevelEvent" kind="class"><name>endstone::LevelEvent</name>
@@ -2751,6 +2749,7 @@
     <member refid="namespaceendstone_1a1de715f3cef3cb85cbef38b7ec0ee3db" kind="typedef"><name>EffectId</name></member>
     <member refid="namespaceendstone_1a996c90f609bfd792a8245bb60fd3e4ea" kind="typedef"><name>EnchantmentId</name></member>
     <member refid="namespaceendstone_1a38ff2441d6476b407a46c5868fd25cd3" kind="typedef"><name>ItemTypeId</name></member>
+    <member refid="namespaceendstone_1a56604f8e64cbfad4e739248ea315914e" kind="typedef"><name>DimensionId</name></member>
     <member refid="namespaceendstone_1ab1be61859bf80a227cf5d0b12a26ef78" kind="typedef"><name>Message</name></member>
     <member refid="namespaceendstone_1a33e1574322a8aca1ebab711faea30a4a" kind="typedef"><name>ByteTag</name></member>
     <member refid="namespaceendstone_1acb2bf69099c0af04c6c085cb2b3241c8" kind="typedef"><name>ShortTag</name></member>

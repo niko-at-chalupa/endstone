@@ -963,6 +963,20 @@
         </inbodydescription>
         <location file="include/endstone/inventory/item_type.h" line="24" column="1" bodyfile="include/endstone/inventory/item_type.h" bodystart="24" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="typedef" id="namespaceendstone_1a56604f8e64cbfad4e739248ea315914e" prot="public" static="no">
+        <type><ref refid="classendstone_1_1Identifier" kindref="compound">Identifier</ref>&lt; <ref refid="classendstone_1_1Dimension" kindref="compound">Dimension</ref> &gt;</type>
+        <definition>using endstone::DimensionId = typedef Identifier&lt;Dimension&gt;</definition>
+        <argsstring></argsstring>
+        <name>DimensionId</name>
+        <qualifiedname>endstone::DimensionId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/endstone/level/dimension.h" line="31" column="1" bodyfile="include/endstone/level/dimension.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="typedef" id="namespaceendstone_1ab1be61859bf80a227cf5d0b12a26ef78" prot="public" static="no">
         <type>std::variant&lt; std::string, <ref refid="classendstone_1_1Translatable" kindref="compound">Translatable</ref> &gt;</type>
         <definition>using endstone::Message = typedef std::variant&lt;std::string, Translatable&gt;</definition>

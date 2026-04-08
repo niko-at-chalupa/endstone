@@ -16,6 +16,7 @@
 * `#include "endstone/actor/actor.h"`
 * `#include "endstone/actor/item.h"`
 * `#include "endstone/block/block.h"`
+* `#include "endstone/identifier.h"`
 * `#include "endstone/inventory/item_stack.h"`
 * `#include "endstone/level/chunk.h"`
 

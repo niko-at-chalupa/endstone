@@ -224,6 +224,7 @@ _Represents a button with text and an optional icon._
 | typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**BlockType**](classendstone_1_1BlockType.md) &gt; | [**BlockTypeId**](#typedef-blocktypeid)  <br> |
 | typedef [**nbt::ArrayTag**](classendstone_1_1nbt_1_1ArrayTag.md)&lt; std::uint8\_t &gt; | [**ByteArrayTag**](#typedef-bytearraytag)  <br> |
 | typedef [**nbt::ValueTag**](classendstone_1_1nbt_1_1ValueTag.md)&lt; std::uint8\_t &gt; | [**ByteTag**](#typedef-bytetag)  <br> |
+| typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**Dimension**](classendstone_1_1Dimension.md) &gt; | [**DimensionId**](#typedef-dimensionid)  <br> |
 | enum  | [**DisplaySlot**](#enum-displayslot)  <br>_Locations for displaying objectives to the player._  |
 | typedef [**nbt::ValueTag**](classendstone_1_1nbt_1_1ValueTag.md)&lt; [**double**](classendstone_1_1Identifier.md) &gt; | [**DoubleTag**](#typedef-doubletag)  <br> |
 | typedef [**Identifier**](classendstone_1_1Identifier.md)&lt; [**class**](classendstone_1_1Identifier.md) [**EffectType**](classendstone_1_1EffectType.md) &gt; | [**EffectId**](#typedef-effectid)  <br> |
@@ -468,6 +469,19 @@ using endstone::ByteArrayTag = typedef nbt::ArrayTag<std::uint8_t>;
 
 ```C++
 using endstone::ByteTag = typedef nbt::ValueTag<std::uint8_t>;
+```
+
+
+
+
+<hr>
+
+
+
+### typedef DimensionId 
+
+```C++
+using endstone::DimensionId = typedef Identifier<Dimension>;
 ```
 
 
