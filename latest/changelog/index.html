@@ -5247,13 +5247,13 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li><strong>BREAKING</strong>: Replaced <code>asPlayer()</code>, <code>asMob()</code>, <code>asConsole()</code>, etc. with <code>as&lt;T&gt;()</code>/<code>is&lt;T&gt;()</code> on all <code>CommandSender</code>
   and <code>Actor</code> subtypes. In Python, use <code>isinstance()</code> as before.</li>
 <li><strong>BREAKING</strong>: <code>Player</code> no longer inherits from <code>OfflinePlayer</code>.</li>
-<li><strong>BREAKING</strong>: <code>BlockPlaceEvent.get_block()</code> now returns the placed block instead of the replaced block.
-  <code>getBlockPlacedState</code>/<code>getBlockReplaced</code> renamed to <code>getBlockPlaced</code>/<code>getBlockReplacedState</code> to match Bukkit.</li>
+<li><strong>BREAKING</strong>: <code>BlockPlaceEvent.block</code> now returns the placed block instead of the replaced block.
+  <code>block_placed_state</code>/<code>block_replaced</code> renamed to <code>block_placed</code>/<code>block_replaced_state</code> to match Bukkit.</li>
 </ul>
 <h3 id="fixed">Fixed<a class="headerlink" href="#fixed" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fixed type annotations for <code>Plugin</code> and <code>event_handler</code>.</li>
-<li>Fixed <code>Player.sendMessage</code> accepting empty messages.</li>
+<li>Fixed <code>Player.send_message</code> accepting empty messages.</li>
 <li>Fixed command argument parsing dropping optional message parameters with empty tokens.</li>
 <li>Fixed plugin manager destruction order causing access violations on shutdown.</li>
 </ul>
