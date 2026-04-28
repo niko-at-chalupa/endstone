@@ -30,7 +30,7 @@ Alternatively, if you're running Endstone from within Docker, use:
     ```
     docker run \
     --platform linux/amd64 \
-    -p 19132:19132 \
+    -p 19132:19132/udp \
     -it \
     -v ${PWD}:/home/endstone \
     --name endstone-server \
